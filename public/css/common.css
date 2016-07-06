@@ -1,0 +1,37 @@
+body {
+    font-family: 'Lato';
+}
+
+select {
+    padding: 10px;
+    line-height:30px;
+    height:30px;
+    background: #ffffff;
+    border: 1px solid #CCCCCC;
+    border-radius: 3px;
+    margin: 0 5px;
+}
+
+.no-radius{
+    -webkit-border-radius:0px;
+    -moz-border-radius:0px;
+    border-radius:0px;
+}
+
+#user-photo{
+    display: none;
+}
+@media (min-width: 768px){
+    .navbar-nav>li>a {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .navbar-default .navbar-nav>li>a{
+        line-height:40px;
+    }
+    #user-photo {
+        width:40px;
+        height: 40px;
+        display: inline-block;
+    }
+}
