@@ -7,7 +7,7 @@
 <h2><a href="http://localhost:8000/">Welcom to wwtl!</a></h2>
 
 <div>
-    <a href="http://localhost:8000/authLoginProcess/{!! $id !!}/{!! $password !!}">Click!!</a>
+    <a href="http://localhost:8000/authLoginProcess/{!! $id !!}">Click!!</a>
 </div>
 
 </body>

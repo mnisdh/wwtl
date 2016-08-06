@@ -83,6 +83,7 @@ class AuthController extends Controller
         User::create([
             'name' => $request->input('name'),
             'email' => $request->input('email'),
+            'password' => bcrypt($request->input('password')).$request->input('email'),
             'dt_create' => date("Y-m-d H:i:s")
         ]);
 
@@ -102,11 +103,13 @@ class AuthController extends Controller
         return view('welcome');
     }
 
-    public function authLoginProcess($id, $password){
+    public function authLoginProcess($id){
+        $pwd = User::where('email', $id)->first()->password;
+        $pwd = str_replace($id, '', $pwd);
         User::where('email', $id)
-            ->update(['password' => $password]);
+            ->update(['password' => $pwd]);
 
-        return view('login');
+        return view('auth/login');
     }
 
     public function redirectToAuth($oauth){

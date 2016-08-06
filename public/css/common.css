@@ -1,14 +1,27 @@
 body {
     font-family: 'Lato';
+    background-color: #f5f5f5;
 }
 
+.navbar-default{
+    background-color: #fff;
+}
+.navbar-default .navbar-brand{
+    font-weight: bolder;
+    color:#337AB7
+}
+.panel{
+    border-radius:0px;
+}
+.panel-default>.panel-heading{
+    background-color: #fff;
+}
 select {
     padding: 10px;
     line-height:30px;
     height:30px;
     background: #ffffff;
     border: 1px solid #CCCCCC;
-    border-radius: 3px;
     margin: 0 5px;
 }
 
@@ -32,6 +45,12 @@ select {
     #user-photo {
         width:40px;
         height: 40px;
+        margin-right:10px;
         display: inline-block;
     }
+}
+
+.clear{
+    display: block;
+    clear: both;
 }

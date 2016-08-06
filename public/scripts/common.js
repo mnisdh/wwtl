@@ -7,21 +7,28 @@ $.ajaxSetup(
     });
 
 
-function Datebox() {
+function Datebox(date) {
+    var date;
+    if(date != null){
+        date = date.substr(0,10)
+    }
+    else{
+        date = moment().format('YYYY-MM-DD')
+    }
     $("#birth").dateDropdowns({
-        defaultDate: moment().format('YYYY-MM-DD'),
+        defaultDate: date,
         minYear: 1700
     });
 }
 
-function Cropbox() {
+function Cropbox(img) {
     window.onload = function() {
         var options =
         {
             imageBox: '.imageBox',
             thumbBox: '.thumbBox',
             spinner: '.spinner',
-            imgSrc: '/img/user.png'
+            imgSrc: img || '/img/user.png'
         }
         var cropper = new cropbox(options);
 

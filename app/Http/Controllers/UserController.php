@@ -8,8 +8,12 @@ use App\Http\Requests;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function postCheckinfo(Request $request){
-        $user = User::where('user_seq', \Auth::user()->user_seq)->first();
+        $user = User::find(\Auth::user()->seq);
         $user->nick_name = $request->input('nick_name');
         $user->photo = $request->input('photo');
         $user->birth = $request->input('birth');
@@ -21,6 +25,6 @@ class UserController extends Controller
     }
     
     public function getMypage(){
-        return view('/mypage');
+        return view('/auth/mypage');
     }
 }

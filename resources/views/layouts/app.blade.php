@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+    <meta name="google-signin-client_id" content="742035126770-eimbsbfcfb55ibms1u674svn93aujpcu.apps.googleusercontent.com">
     <title>WWLT</title>
 
     <!-- Fonts -->
@@ -32,14 +32,14 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Laravel
+                    WWTL
                 </a>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">Home</a></li>
+                    <li><a href="{{ url('/home') }}">What were they like.com</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -56,6 +56,9 @@
 
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="{{ url('/user/mypage') }}">My page</a></li>
+                                @if(Auth::user()->admin_yn == 'Y')
+                                <li><a href="{{ url('/admin/ratetype') }}">Amdin</a></li>
+                                @endif
                                 <li><a href="{{ url('/logout') }}">Logout</a></li>
                             </ul>
                         </li>
@@ -66,16 +69,21 @@
     </nav>
 
     <div class="container">
+        <div id="main" class="row">
+            <div class="col-md-12">@yield('main')</div>
+        </div>
         <div class="row">
-            <div class="col-md-9 col-md-offset-1">
+            <div class="col-md-8 col-md-offset-1">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 @yield('content')</div>
-            <div class="col-md-2">advertisement area</div>
+            <div class="col-md-3">advertisement area</div>
         </div>
     </div>
 
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="/scripts/plugin/underscore.js"></script>
     @yield('plugin')
     <script src="/scripts/common.js"></script>
     @yield('scripts')

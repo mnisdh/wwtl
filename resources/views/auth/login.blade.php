@@ -4,9 +4,10 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Login</div>
                 <div class="panel-body">
-                    <a href="{!!URL::to('/auth/google')!!}">Register with Google</a>
+                    <a href="{!!URL::to('/auth/google')!!}">Sign in with Google</a>
                     <br />
-                    <a href="{!!URL::to('/auth/facebook')!!}">Register with Facebook</a>
+                    <a href="{!!URL::to('/auth/facebook')!!}">Sign in with Facebook</a>
+
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
                         {{ csrf_field() }}
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">

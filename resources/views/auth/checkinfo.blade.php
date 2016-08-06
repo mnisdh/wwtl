@@ -4,13 +4,12 @@
     <link href="/css/cropbox.css" rel="stylesheet">
     <link href="/css/fileinput.css" rel="stylesheet">
     <link href="/css/slider.css" rel="stylesheet">
-    <link href="/css/views/user.css" rel="stylesheet">
+    <link href="/css/views/auth.checkinfo.css" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
 @endsection
 @section('content')
-    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-        <div class="intro">
-            <div class="col-lg-offset-4 col-lg-4 col-lg-offset-4 text-center">
+        <div class="row intro">
+            <div class="col-md-offset-3 col-md-6 col-md-offset-3 text-center">
                 <div class="row-fluid step on" data-step="1">
                     <div class="alert alert-info" role="alert">What is your nick name?</div>
                     <input type="text" class="form-control" id="nick_name" name="nick_name" />
@@ -69,7 +68,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-offset-4 col-lg-4 col-lg-offset-4 text-center">
+            <div class="col-md-offset-3 col-md-6 col-md-offset-3 text-center">
                 <a id="btn-prev" class="btn btn-default">
                     <i class="glyphicon glyphicon-chevron-left"></i> <span>Prev</span>
                 </a>
@@ -78,7 +77,6 @@
                 </a>
             </div>
         </div>
-    </div>
 @endsection
 
 @section('plugin')
@@ -89,6 +87,6 @@
     <script src="/scripts/plugin/bootstrap-filestyle.min.js"></script>
 @endsection
 @section('scripts')
-    <script src="/scripts/views/user.intro.js"></script>
+    <script src="/scripts/views/auth.checkinfo.js"></script>
 
 @endsection
