@@ -1,0 +1,112 @@
+.photo img{
+    width:150px;
+    height:150px;
+}
+.target-info .name{
+    font-size:20px;
+    font-weight: bold;
+}
+.target-info th{
+    color:#999;
+    font-weight: normal;
+    padding-right:15px;
+}
+.target-info td{
+    padding: 3px 10px 3px 0px;
+}
+.target-score{
+    font-size:50px;
+    font-weight:bolder;
+}
+.featured {
+    vertical-align: bottom;
+}
+.featured a {
+    width:100%;
+}
+.featured select {
+    width:100%;
+    margin:10px 0px 10px 0px
+}
+#view-rate #info{
+    display: none;
+}
+
+#view-rate #score, #recent{
+    font-size: 30px;
+    font-weight:bolder;
+    color:#1b6d85;
+}
+
+#view-rate #year{
+    color:#999;
+    margin-left:10px;
+}
+#view-rate #year b{
+    font-size:10px;
+    font-weight:normal;
+}
+#view-rate #dt{
+    margin-top: -25px;
+    font-size:10px;
+}
+#view-rate #comment{
+    margin-bottom:10px;
+    word-break:break-all;
+}
+#view-rate #comment b{
+    color: #999;
+    margin-right:10px;
+}
+
+#view-rate #chart{
+    border: 1px solid #eee;
+    text-align: center;
+    height:200px;
+}
+
+#list-user{
+    border: 1px solid #eee;
+    height:200px;
+    overflow: auto;
+    padding:10px;
+}
+#list-user a{
+    margin:10px;
+    cursor: pointer;
+    display: block;
+}
+#list-user img{
+    width:30px;
+    height:30px;
+    margin-right:20px;
+}
+
+#list-reply div{
+
+}
+#list-reply .creator img {
+    width:18px;
+    height:18px;
+    margin-left:10px;
+    margin-right:10px;
+}
+#list-reply .creator span {
+    font-size:11px;
+    margin-left:10px;
+}
+#list-reply .comment{
+    word-break: break-all
+}
+#reply textarea, #reply #reply-submit{
+    height:50px;
+}
+#reply #reply-submit{
+    line-height:40px;
+}
+#reply .update, #reply .delete{
+    font-size: 11px;
+    margin-left:5px;
+    color:#999;
+    cursor: pointer;
+}

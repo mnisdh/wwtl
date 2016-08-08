@@ -1,0 +1,21 @@
+.slider {
+    width:100% !important;
+}
+.btn-primary {float:right; margin-top: 0px;}
+
+#tbl-item{
+    width:100%;
+    table-layout: fixed;
+}
+#tbl-item tr{
+    height:80px;
+}
+#tbl-item .btn-na {
+    font-size: 11px;
+    padding:2px;
+    float: right;
+    margin-left:20px;
+}
+#tbl-item .btn-na.on {
+    background-color: #eee;
+}
