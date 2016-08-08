@@ -51,13 +51,19 @@
         </div>
         <div class="panel-body" id="reply">
             <div id="list-reply"></div>
+            <?php
+                $user = '';
+                if(!Auth::guest()){
+                    $user = \Auth::user()->seq;
+                }
+            ?>
             <script type="text/template" id="tmpl-reply">
             <% _.each(data, function(v, i){%>
             <div class="reply-item">
                 <p class="creator">
                     <a><%- v.nick_name %></a> <img src="<%- v.photo %>" /> |
                     <span><%- v.update_dt %></span>
-                    <% if(v.seq == '{{ \Auth::user()->seq }}'){%>
+                    <% if(v.seq ==  {{ $user }}){ %>
                     <a class="update" data-id="<%- v.id %>"><i class="glyphicon glyphicon-edit"></i></a><a class="delete" data-id="<%- v.id %>"><i class="glyphicon glyphicon-trash"></i></a>
                     <%}%>
                 </p>
