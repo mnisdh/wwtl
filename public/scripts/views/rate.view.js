@@ -12,7 +12,7 @@ $(document).ready(function () {
 
 function init() {
     $('#sel-type').trigger('change');
-   // getReply();
+    getReply();
 }
 
 function  initEvent() {
