@@ -12,7 +12,7 @@ $(document).ready(function () {
 
 function init() {
     $('#sel-type').trigger('change');
-    getReply();
+   // getReply();
 }
 
 function  initEvent() {
@@ -43,6 +43,7 @@ function getReply() {
         type: 'get',
         url: '/rate/reply/' + $('#target').val(),
         success: function (res) {
+
             var tmp = _.template($('#tmpl-reply').html());
             $('#list-reply').html(tmp({data : res}));
 
