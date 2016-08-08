@@ -57,7 +57,7 @@
                 <p class="creator">
                     <a><%- v.nick_name %></a> <img src="<%- v.photo %>" /> |
                     <span><%- v.update_dt %></span>
-                    <% if(v.seq == {{ \Auth::user()->seq }}){%>
+                    <% if(v.seq == '{{ \Auth::user()->seq }}'){%>
                     <a class="update" data-id="<%- v.id %>"><i class="glyphicon glyphicon-edit"></i></a><a class="delete" data-id="<%- v.id %>"><i class="glyphicon glyphicon-trash"></i></a>
                     <%}%>
                 </p>
@@ -95,7 +95,7 @@
             <a href="/rate/rate/{{$target->seq}}" class="btn btn-success btn-sm">Rate '{{$target->nick_name}}'</a>
         </div>
         <div class="panel-body text-center">
-            @if(count($type) > 0)
+            @if(count($main) > 0)
                 <div class="row-fluid">
                     <div class="col-md-7 text-left" id="view-rate">
                         <div id="info">
