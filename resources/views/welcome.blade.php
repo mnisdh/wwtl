@@ -6,7 +6,7 @@
 
                 <div class="panel-body">
                     Welcome WWTL!! <br />
-                    Please check your email and go on Login.
+                    Please check your email and Login.
                 </div>
             </div>
 @endsection

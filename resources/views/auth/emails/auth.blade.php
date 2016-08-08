@@ -4,10 +4,10 @@
     <meta charset="utf-8">
 </head>
 <body>
-<h2><a href="http://localhost:8000/">Welcom to wwtl!</a></h2>
+<h2><a href="http://localhost:8000/">Welcome to wwtl!</a></h2>
 
 <div>
-    <a href="http://localhost:8000/authLoginProcess/{!! $id !!}">Click!!</a>
+    <a href="http://localhost:8000/authLoginProcess/{!! $id !!}">Click here!!</a>
 </div>
 
 </body>

@@ -30,7 +30,7 @@
                     </div>
                 </div>
                 <div class="row-fluid step Cropbox" data-step="4">
-                    <div class="alert alert-info" role="alert">Can you give your photo?</div>
+                    <div class="alert alert-info" role="alert">Do you want to upload your photo?</div>
                     <div class="container">
                         <div class="action">
                             <input type="file" id="file" class="filestyle" data-badge="false" />
@@ -57,7 +57,7 @@
 
                 </div>
                 <div class="row-fluid step" data-step="5">
-                    <div class="alert alert-info" role="alert">What is your job?</div>
+                    <div class="alert alert-info" role="alert">What is your occupation?</div>
                     <input type="text" class="form-control" id="job" name="job" />
                 </div>
                 <div class="row-fluid step" data-step="6" style="position:relative">
