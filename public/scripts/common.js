@@ -1,10 +1,29 @@
 $.ajaxSetup(
+{
+    headers:
     {
-        headers:
-        {
-            'X-CSRF-Token': $('input[name="_token"]').val()
+        'X-CSRF-Token': $('input[name="_token"]').val()
+    }
+});
+$('.provision').on('click', function () {
+    var url = $(this).data('href');
+    modal({
+        type: 'confirm',
+        title: 'Confirm',
+        text: 'Provision Message',
+        buttonText: {
+            ok: 'OK',
+            yes: 'Allow',
+            cancel: 'Deny'
+        },
+        callback: function(result) {
+            if(result)
+            {
+                location.href = url;
+            }
         }
-    });
+    })
+})
 
 
 function Datebox(date) {

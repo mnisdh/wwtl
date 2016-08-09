@@ -50,7 +50,7 @@
 
                     <div class="form-group">
                         <div class="col-md-8 col-md-offset-4">
-                            <a href="{{ url('/register') }}" class="btn btn-default">
+                            <a data-href="{{ url('/register') }}" class="btn btn-default provision">
                                 Register
                             </a>
                             <button type="submit" class="btn btn-success">
@@ -66,33 +66,10 @@
                 </form>
             </div>
             <div class="col-md-4">
-                <a class="btn-auth" id="btn-google" data-href="{!!URL::to('/auth/google')!!}">Sign in with Google</a>
+                <a class="btn-auth provision" id="btn-google" data-href="{!!URL::to('/auth/google')!!}">Sign in with Google</a>
                 <br />
-                <a class="btn-auth" id="btn-facebook" data-href="{!!URL::to('/auth/facebook')!!}">Sign in with Facebook</a>
+                <a class="btn-auth provision" id="btn-facebook" data-href="{!!URL::to('/auth/facebook')!!}">Sign in with Facebook</a>
             </div>
         </div>
     </div>
-@endsection
-@section('scripts')
-    <script>
-        $('.btn-auth').click(function () {
-            var url = $(this).data('href');
-            modal({
-                type: 'confirm',
-                title: 'Confirm',
-                text: 'Provision Message',
-                buttonText: {
-                    ok: 'OK',
-                    yes: 'Allow',
-                    cancel: 'Deny'
-                },
-                callback: function(result) {
-                    if(result)
-                    {
-                        location.href = url;
-                    }
-                }
-            })
-        })
-    </script>
 @endsection
