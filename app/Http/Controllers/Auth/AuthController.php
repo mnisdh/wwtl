@@ -117,7 +117,7 @@ class AuthController extends Controller
     }
 
     public function handleAuthCallback($oauth){
-        if($_POST['error']){
+        if($_GET['error']){
             try{
                 $user = Socialite::driver($oauth)->user();
             }catch(Exception $e){
