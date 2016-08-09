@@ -12,6 +12,10 @@
                     <div>{{$data->nick_name}}</div>
                 </a>
             @endforeach
+            @if($i == 0)
+                <p style="margin-top:30px;text-align:center; font-size: 50px; font-weight: bolder; color:#b1d0ea">WWTL</p>
+                <p style="text-align:center; color:#b1d0ea">What were they like.com</p>
+            @endif
         </div>
         <div class="col-md-7" id="search-board">
         </div>
@@ -193,7 +197,23 @@
         </div>
     </div>
     @endif
+    <div id="map"></div>
+    <script type="text/javascript">
+
+        var map;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: -34.397, lng: 150.644},
+                zoom: 8
+            });
+        }
+
+    </script>
+
 @endsection
 @section('scripts')
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5cttHt1JC55QdJH7Ki41zIOXIF0I5lR8&callback=initMap">
+    </script>
     <script src="/scripts/views/home.js"></script>
 @endsection
