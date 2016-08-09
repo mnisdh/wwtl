@@ -118,6 +118,8 @@ class AuthController extends Controller
 
     public function handleAuthCallback($oauth){
         if($_GET['error']){
+            return redirect()->intended('/');
+        }else{
             try{
                 $user = Socialite::driver($oauth)->user();
             }catch(Exception $e){
@@ -128,8 +130,6 @@ class AuthController extends Controller
             \Auth::login($user);
 
             return redirect()->intended('home');
-        }else{
-            return redirect()->intended('/');
         }
 
     }
