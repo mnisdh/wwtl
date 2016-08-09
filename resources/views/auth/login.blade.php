@@ -73,19 +73,3 @@
         </div>
     </div>
 @endsection
-@section('scripts')
-    <script>
-        $('.btn-auth').click(function(){
-            modal({
-                type: 'confirm',
-                title: 'Confirm to Register',
-                text: 'Message',
-                callback: function(result) {
-                    if(!result){
-                        return false;
-                    }
-                }
-            });
-        })
-    </script>
-@endsection
