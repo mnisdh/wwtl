@@ -66,7 +66,7 @@
                 </form>
             </div>
             <div class="col-md-4">
-                <a class="btn-auth" id="btn-google" data-url="{!!URL::to('/auth/google')!!}">Sign in with Google</a>
+                <a class="btn-auth" id="btn-google" href="{!!URL::to('/auth/google')!!}">Sign in with Google</a>
                 <br />
                 <a class="btn-auth" id="btn-facebook" data-url="{!!URL::to('/auth/facebook')!!}">Sign in with Facebook</a>
             </div>
@@ -75,17 +75,17 @@
 @endsection
 @section('scripts')
     <script>
-        $('.btn-auth').click(function(){
-            modal({
-                type: 'confirm',
-                title: 'Confirm to Register',
-                text: 'Message',
-                callback: function(result) {
-                    if(result){
-                        location.href = $(this).data('url');
-                    }
-                }
-            });
-        })
+//        $('.btn-auth').click(function(){
+//            modal({
+//                type: 'confirm',
+//                title: 'Confirm to Register',
+//                text: 'Message',
+//                callback: function(result) {
+//                    if(result){
+//                        location.href = $(this).data('url');
+//                    }
+//                }
+//            });
+//        })
     </script>
 @endsection
