@@ -120,7 +120,7 @@ class AuthController extends Controller
         try{
             $user = Socialite::driver($oauth)->user();
         }catch(Exception $e){
-            return redirect('auth/'.$oauth);
+            return redirect('/');
         }
 
         $user = $this->findOrCreateUser($user);
