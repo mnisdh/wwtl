@@ -27,3 +27,7 @@ Route::get('auth/{oauth}/callback', 'Auth\AuthController@handleAuthCallback');
 Route::controller('user', 'UserController');
 Route::controller('admin', 'AdminController');
 Route::controller('rate', 'RateController');
+
+Route::get('/provision', function(){
+   return 'message';
+});
