@@ -50,19 +50,42 @@
 
                     <div class="form-group">
                         <div class="col-md-8 col-md-offset-4">
+                            <a href="{{ url('/register') }}" class="btn btn-default">
+                                Register
+                            </a>
                             <button type="submit" class="btn btn-success">
                                 <i class="fa fa-btn fa-sign-in"></i> Login
                             </button>
-                            <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-8 col-md-offset-4">
+                            <a class="btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
                         </div>
                     </div>
                 </form>
             </div>
             <div class="col-md-4">
-                <a class="btn-auth" id="btn-google" href="{!!URL::to('/auth/google')!!}">Sign in with Google</a>
+                <a class="btn-auth" id="btn-google" data-url="{!!URL::to('/auth/google')!!}">Sign in with Google</a>
                 <br />
-                <a class="btn-auth" id="btn-facebook" href="{!!URL::to('/auth/facebook')!!}">Sign in with Facebook</a>
+                <a class="btn-auth" id="btn-facebook" data-url="{!!URL::to('/auth/facebook')!!}">Sign in with Facebook</a>
             </div>
         </div>
     </div>
+@endsection
+@section('scripts')
+    <script>
+        $('.btn-auth').click(function(){
+            modal({
+                type: 'confirm',
+                title: 'Confirm to Register',
+                text: 'Message',
+                callback: function(result) {
+                    if(result){
+                        location.href = $(this).data('url');
+                    }
+                }
+            });
+        })
+    </script>
 @endsection
