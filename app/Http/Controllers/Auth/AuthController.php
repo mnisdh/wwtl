@@ -138,6 +138,7 @@ class AuthController extends Controller
             'auth_key'=>$oAuthUser->id,
             'email'=>$oAuthUser->email,
             'name'=>$oAuthUser->name,
+            'photo'=>$oAuthUser->avatar,
             'dt_create' => date("Y-m-d H:i:s")
         ]);
     }

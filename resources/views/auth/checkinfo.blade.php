@@ -29,6 +29,7 @@
                         </label>
                     </div>
                 </div>
+                <input type="hidden" id="oPhoto" value="{{}}" />
                 <div class="row-fluid step Cropbox" data-step="4">
                     <div class="alert alert-info" role="alert">Do you want to upload your photo?</div>
                     <div class="container">
