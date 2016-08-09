@@ -117,16 +117,21 @@ class AuthController extends Controller
     }
 
     public function handleAuthCallback($oauth){
-        try{
-            $user = Socialite::driver($oauth)->user();
-        }catch(Exception $e){
-            return redirect('/');
+        if($_POST['error']){
+            try{
+                $user = Socialite::driver($oauth)->user();
+            }catch(Exception $e){
+                return redirect('/');
+            }
+
+            $user = $this->findOrCreateUser($user);
+            \Auth::login($user);
+
+            return redirect()->intended('home');
+        }else{
+            return redirect()->intended('/');
         }
 
-        $user = $this->findOrCreateUser($user);
-        \Auth::login($user);
-
-        return redirect()->intended('home');
     }
 
     private function findOrCreateUser($oAuthUser){
