@@ -36,7 +36,11 @@ function  initEvent() {
                 comment : $('.txt-comment').val()
             },
             success: function (res) {
-                alert('Rating complete!');
+                modal({
+                    type: 'alert',
+                    title: 'Alert',
+                    text: 'Rating complete!'
+                })
                 location.href = '/rate/view/' + $('#target-seq').val();
             }
         })

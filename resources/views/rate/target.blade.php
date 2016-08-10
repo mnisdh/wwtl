@@ -58,7 +58,7 @@
                         <li class="list-group-item">
                             <label style="margin-right:20px;">Gender*</label>
                             <div class="btn-group" id="gender" data-toggle="buttons">
-                                <label class="btn btn-default {{ $seq == -1 ? '' : \App\Target::find($seq)->gender == 0 ? 'active':'' }}">
+                                <label class="btn btn-default {{ $seq == -1 ? 'active' : \App\Target::find($seq)->gender == 0 ? 'active':'' }}">
                                     <input type="radio" name="gender" value="0" autocomplete="off">Male
                                 </label>
                                 <label class="btn btn-default {{ $seq == -1 ? '' : \App\Target::find($seq)->gender == 1 ? 'active':'' }}">
@@ -73,10 +73,13 @@
                         <li class="list-group-item">
                             <label>State, Country*</label>
                             <input type="text"  value="{{$seq == -1 ? '' : \App\Target::find($seq)->locale}}" id="locale" name="locale" class="form-control" />
+                            <input type="hidden" id="locale_cd" name="locale_cd" value="{{$seq == -1 ? '' : \App\Target::find($seq)->locale_cd}}" />
+                        </li>
+                        <li class="list-group-item">
+                            <a id="btn-update" class="btn btn-primary btn-sm" href="#">Continue</a>
                         </li>
                     </ul>
                 </div>
-                <a id="btn-update" class="btn btn-primary btn-sm" href="#" role="button">Continue</a>
             </div>
         </div>
     </div>
@@ -92,5 +95,6 @@
 @endsection
 @section('scripts')
     <script src="/scripts/views/rate.target.js"></script>
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5cttHt1JC55QdJH7Ki41zIOXIF0I5lR8&signed_in=true&libraries=places&callback=initAutocomplete"
+            async defer></script>
 @endsection

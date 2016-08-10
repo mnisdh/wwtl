@@ -98,6 +98,7 @@ class RateController extends Controller
         $target->gender = $_POST['gender'];
         $target->job = $_POST['job'];
         $target->locale = $_POST['locale'];
+        $target->locale_cd = $_POST['locale_cd'];
         $target->save();
 
         return $target->seq;

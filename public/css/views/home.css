@@ -193,7 +193,9 @@
 .search-detail .c-name.val-condition{
     display: inline-block;
 }
-
+#show-pic {
+  display: none;
+}
 #show-map h3{
     color:#fff;
     font-weight:bolder;

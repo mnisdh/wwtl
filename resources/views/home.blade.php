@@ -79,7 +79,7 @@
     <div class="row" style="margin-top:20px">
         <div class="col-md-4">
             <div class="panel panel-default">
-                <div class="panel-heading">Who might rate me?</div>
+                <div class="panel-heading">Who rated me?</div>
                 <div class="panel-body rate">
                     @foreach($rateme as $data)
                         <a href="/rate/view/{{ $data->target_seq }}">
@@ -217,5 +217,4 @@
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5cttHt1JC55QdJH7Ki41zIOXIF0I5lR8&callback=initMap">
     </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 @endsection

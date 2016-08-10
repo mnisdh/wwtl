@@ -29,7 +29,7 @@
                         </label>
                     </div>
                 </div>
-                <input type="hidden" id="oPhoto" value="{{}}" />
+                <input type="hidden" id="oPhoto" value="{{Auth::user()->photo}}" />
                 <div class="row-fluid step Cropbox" data-step="4">
                     <div class="alert alert-info" role="alert">Do you want to upload your photo?</div>
                     <div class="container">
@@ -64,6 +64,7 @@
                 <div class="row-fluid step" data-step="6" style="position:relative">
                     <div class="alert alert-info" role="alert">Where do you live?</div>
                     <input id="locale" name="locale" class="form-control" type="text" />
+                    <input id="locale_cd" name="locale_cd" type="hidden" />
                 </div>
                 <hr />
             </div>
@@ -89,5 +90,6 @@
 @endsection
 @section('scripts')
     <script src="/scripts/views/auth.checkinfo.js"></script>
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5cttHt1JC55QdJH7Ki41zIOXIF0I5lR8&signed_in=true&libraries=places&callback=initAutocomplete"
+            async defer></script>
 @endsection

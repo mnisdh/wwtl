@@ -20,6 +20,9 @@
                         <tr>
                             <td colspan="2" class="name">
                                 {{ $target->nick_name  }} ({{ $target->first_name }} {{ $target->last_name }})
+                                @if($target->user_seq == Auth::user()->seq)
+                                <a id="edit-target" href="/rate/target/{{$target->seq}}"><i class="glyphicon glyphicon-edit"></i></a>
+                                @endif
                             </td>
                         </tr>
                         <tr>

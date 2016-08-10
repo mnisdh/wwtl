@@ -53,13 +53,13 @@ class AdminController extends Controller
                     $data = \App\Ratetype::find($_POST['rate_type']);
                     $data->use_yn = $_POST['use_yn'];
                 } else{
-                    $idx = $_POST['query']=='up'?($data->idx -1) : ($data->idx + 1);
                     $data = \App\Ratetype::find($_POST['rate_type']);
-                    $data_tmp = \App\Ratetype::find($idx);
+                    $idx = $_POST['query']=='up'?($data->idx -1) : ($data->idx + 1);
+                    $data_tmp = \App\Ratetype::where('idx', $idx)->first();
 
                     $data_tmp->idx = $data->idx;
-                    $data->idx = $idx;
                     $data_tmp->save();
+                    $data->idx = $idx;
                 }
                 $data->save();
 
@@ -73,15 +73,15 @@ class AdminController extends Controller
                     $data->use_yn = $_POST['use_yn'];
                     $data->idx = $_POST['idx'];
                 } else if($_POST['query'] == 'update_name') {
-                    $data = \App\Rateitem::where('rate_type', $_POST['rate_type'])->where('rate_item', $_POST['rate_item'])->find(1);
+                    $data = \App\Rateitem::where('rate_type', $_POST['rate_type'])->where('rate_item', $_POST['rate_item'])->first();
                     $data->name = $_POST['name'];
                 } else if($_POST['query'] == 'update_use') {
-                    $data = \App\Rateitem::where('rate_type', $_POST['rate_type'])->where('rate_item', $_POST['rate_item'])->find(1);
+                    $data = \App\Rateitem::where('rate_type', $_POST['rate_type'])->where('rate_item', $_POST['rate_item'])->first();
                     $data->use_yn = $_POST['use_yn'];
                 } else{
+                    $data = \App\Rateitem::where('rate_type', $_POST['rate_type'])->where('rate_item', $_POST['rate_item'])->first();
                     $idx = $_POST['query']=='up'?($data->idx -1) : ($data->idx + 1);
-                    $data = \App\Rateitem::where('rate_type', $_POST['rate_type'])->where('rate_item', $_POST['rate_item'])->find(1);
-                    $data_tmp = \App\Ratetype::find($idx);
+                    $data_tmp = \App\Rateitem::where('rate_type', $_POST['rate_type'])->where('idx', $idx)->first();
 
                     $data_tmp->idx = $data->idx;
                     $data->idx = $idx;
