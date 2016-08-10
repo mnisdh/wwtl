@@ -30,7 +30,10 @@ function  initEvent() {
     $('#btn-next').on('click', function () {
 
         if($('.step.on').hasClass('Cropbox')){
-            $('#btnCrop').trigger('click')
+            if($('#photo').val() != '')
+            {
+                $('#btnCrop').trigger('click')
+            }
         }
 
         var step = $('.step.on').data('step') + 1;
