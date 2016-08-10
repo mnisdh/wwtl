@@ -127,24 +127,33 @@ class AuthController extends Controller
             }
 
             $user = $this->findOrCreateUser($user);
+            if($user == null)
+            {
+                return redirect('/home?authCheck='.$oauth);
+            }
             \Auth::login($user);
 
             return redirect()->intended('home');
         }
-
     }
 
     private function findOrCreateUser($oAuthUser){
         if($user = User::where('email', $oAuthUser->email)->where('auth_key', $oAuthUser->id)->first()){
             return $user;
         }
+        else{
+            return null;
+        }
+    }
 
-        return User::create([
+    private function createUser($oAuthUser){
+        $user = User::create([
             'auth_key'=>$oAuthUser->id,
             'email'=>$oAuthUser->email,
             'name'=>$oAuthUser->name,
             'photo'=>$oAuthUser->avatar,
             'dt_create' => date("Y-m-d H:i:s")
         ]);
+        return $user;
     }
 }

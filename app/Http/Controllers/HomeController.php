@@ -27,7 +27,9 @@ class HomeController extends Controller
     {
         $user = \Auth::user();
         if(\Auth::guest()){
-            return view('home', ['country' => DB::table('apps_countries')->get(),
+            return view('home', [
+                'authCheck'=>(isset($_GET['authCheck'])?$_GET['authCheck']:''),
+                'country' => DB::table('apps_countries')->get(),
                 'ratetype' => \App\Ratetype::all()]);
         }
         else if(User::where('seq', $user->seq)->where('birth', '<>', '')->count()==0){
@@ -36,6 +38,7 @@ class HomeController extends Controller
         else{
             $user_name = '%'.$user->nick_name.'%';
             return view('home', [
+                'authCheck'=>(isset($_GET['authCheck'])?$_GET['authCheck']:''),
                 'country' => DB::table('apps_countries')->get(),
                 'ratetype' => \App\Ratetype::all(),
                 'rateme'=> DB::table('v_rate_main')

@@ -217,4 +217,13 @@
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5cttHt1JC55QdJH7Ki41zIOXIF0I5lR8&callback=initMap">
     </script>
+    @if($authCheck != '')
+    <script>
+        modal({
+            type: 'alert',
+            title: 'WWTL',
+            text: 'Your account is not registered. Sign up please.'
+        })
+    </script>
+    @endif
 @endsection
