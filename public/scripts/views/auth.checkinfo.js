@@ -30,7 +30,7 @@ function  initEvent() {
     $('#btn-next').on('click', function () {
 
         if($('.step.on').hasClass('Cropbox')){
-            if($('#photo').val() != '')
+            if($('#photo').val() == '')
             {
                 $('#btnCrop').trigger('click')
             }
@@ -64,9 +64,11 @@ function  initEvent() {
                         modal({
                             type: 'alert',
                             title: 'Alert',
-                            text: 'Thank you for sharing your information.'
+                            text: 'Thank you for sharing your information.',
+                            callback: function(result) {
+                                location.href = '/home';
+                            }
                         })
-                        location.href = '/home';
                     }
                 })
             }

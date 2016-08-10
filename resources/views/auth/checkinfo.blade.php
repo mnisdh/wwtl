@@ -29,13 +29,12 @@
                         </label>
                     </div>
                 </div>
-                <input type="hidden" id="oPhoto" value="{{Auth::user()->photo}}" />
                 <div class="row-fluid step Cropbox" data-step="4">
                     <div class="alert alert-info" role="alert">Do you want to upload your photo?</div>
                     <div class="container">
                         <div class="action">
                             <input type="file" id="file" class="filestyle" data-badge="false" />
-                            <input type="hidden" id="photo" />
+                            <input type="hidden" id="photo" value="{{Auth::user()->photo}}" />
 
                             <input id="slider-zoom" type="text"
                                    data-slider-min="0"
