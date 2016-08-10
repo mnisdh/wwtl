@@ -5,17 +5,27 @@
 @section('main')
     <div class="row">
         <div class="col-md-7" id="target-board">
-            <?php $i = 0 ?>
-            @foreach(\App\Target::orderBy('dt_update', 'DESC')->groupBy('seq')->take(10)->get() as $data )
-                <a href="/rate/view/{{$data->seq}}" class="target t{{$i++}} img-circle">
-                    <img src="{{$data->photo}}" />
-                    <div>{{$data->nick_name}}</div>
-                </a>
-            @endforeach
-            @if($i == 0)
-                <p style="margin-top:30px;text-align:center; font-size: 50px; font-weight: bolder; color:#b1d0ea">WWTL</p>
-                <p style="text-align:center; color:#b1d0ea">What were they like.com</p>
-            @endif
+            <div class="row" id="show-pic">
+                <?php $i = 0 ?>
+                @foreach(\App\Target::orderBy('dt_update', 'DESC')->groupBy('seq')->take(10)->get() as $data )
+                    <a href="/rate/view/{{$data->seq}}" class="target t{{$i++}} img-circle">
+                        <img src="{{$data->photo}}" />
+                        <div>{{$data->nick_name}}</div>
+                    </a>
+                @endforeach
+            </div>
+            <div class="row" id="show-map">
+                <div class="col-md-3"><h3>Filter Map!!</h3></div>
+                <div class="col-md-9 text-right">
+                    <label>keep <input id="chk-country" type="checkbox" /></label>
+                    <select id="country" disabled>
+                        @foreach($country as $data)
+                            <option value="{{$data->country_code}}">{{$data->country_name}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="col-xs-12"><div id="map" style="{{$i==0?"":"none"}}"></div></div>
+            </div>
         </div>
         <div class="col-md-7" id="search-board">
         </div>
@@ -29,6 +39,10 @@
         </script>
         <div class="col-md-5 search">
             <div class="row">
+                <div class="col-xs-12 disc">
+                    <b>You can find someone.</b> If you search person, you can see pictures and if you search country or city, you can see 'Filter map'.<br />
+                    Check 'keep' in 'Filter map'. Then you can search person in the country.
+                </div>
                 <div class="col-xs-12 txt">
                     <i class="glyphicon glyphicon-user"></i>
                     <input type="text" id="target" placeholder="name, nick name or year of birth">
@@ -197,23 +211,11 @@
         </div>
     </div>
     @endif
-    <div id="map"></div>
-    <script type="text/javascript">
-
-        var map;
-        function initMap() {
-            map = new google.maps.Map(document.getElementById('map'), {
-                center: {lat: -34.397, lng: 150.644},
-                zoom: 8
-            });
-        }
-
-    </script>
-
 @endsection
 @section('scripts')
+    <script src="/scripts/views/home.js"></script>
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5cttHt1JC55QdJH7Ki41zIOXIF0I5lR8&callback=initMap">
     </script>
-    <script src="/scripts/views/home.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 @endsection

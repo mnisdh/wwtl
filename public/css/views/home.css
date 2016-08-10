@@ -1,14 +1,6 @@
 #main{
     margin-top:-35px;
 }
-#main>div{
-    height:300px;
-    padding-top: 15px;
-    margin-bottom:20px;
-}
-#main .search{
-    padding-top:15px
-}
 #main .search .txt i {
     color: #aaa;
     position: absolute;
@@ -49,9 +41,10 @@
 #main #list-featured i {
     font-size:9px;
 }
-#main #target-board,#main #search-board,#main .search{
+#main #target-board,#main #search-board,#main .search>.row{
     position: relative;
-    height:300px;
+    padding-top:30px;
+    height:400px;
     background-color: #337AB7;
 }
 #main #target-board .target{
@@ -199,4 +192,31 @@
 }
 .search-detail .c-name.val-condition{
     display: inline-block;
+}
+
+#show-map h3{
+    color:#fff;
+    font-weight:bolder;
+    display: inline-block;
+    margin:0px;
+}
+#show-map label{
+    color:#fff;
+    font-weight:normal;
+}
+#map{
+    height:320px;
+}
+#country[disabled] {
+    background-color: #eee;
+    color:#aaa;
+    cursor: not-allowed;
+}
+
+.disc{
+    color:#fff;
+    margin-bottom:15px;
+}
+.disc b{
+    font-size:20px;
 }

@@ -3,10 +3,20 @@ $(document).ready(function () {
     initEvent();
 })
 
+var map;
 function init(){
-
+   
 }
 function initEvent(){
+    $('#chk-country').on('change',function () {
+        if($(this).is(":checked")){
+            $('#country').removeAttr('disabled')
+        }
+        else{
+            $('#country').attr('disabled', true)
+        }
+    })
+
     $('.featured').on('change', function () {
         $('#list-featured a').unbind('click');
         var tmp = _.template($('#tmpl-featured-btn').html());
@@ -74,4 +84,17 @@ function search_all(){
             $('#result-all').html(tmp({data: res}))
         }
     })
+}
+
+
+function initMap() {
+    $.getJSON('https://geoip-db.com/json/geoip.php?jsonp=?')
+        .done(function (location) {
+            var loc = location;
+            $('#country').val(loc.country_code)
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: loc.latitude, lng: loc.longitude},
+                zoom: 6
+            });
+        });
 }
