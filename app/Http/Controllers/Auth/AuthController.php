@@ -117,7 +117,7 @@ class AuthController extends Controller
     }
 
     public function handleAuthCallback($oauth){
-        if($_GET['error']){
+        if(isset($_GET['error'])){
             return redirect()->intended('/');
         }else{
             try{
