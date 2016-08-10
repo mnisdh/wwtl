@@ -126,7 +126,7 @@ class AuthController extends Controller
                 return redirect('/');
             }
 
-            $user = $this->findOrCreateUser($user);
+            $user = $this->findUser($user);
             if($user == null)
             {
                 return redirect('/home?authCheck='.$oauth);
@@ -137,7 +137,7 @@ class AuthController extends Controller
         }
     }
 
-    private function findOrCreateUser($oAuthUser){
+    private function findUser($oAuthUser){
         if($user = User::where('email', $oAuthUser->email)->where('auth_key', $oAuthUser->id)->first()){
             return $user;
         }
