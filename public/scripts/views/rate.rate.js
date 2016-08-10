@@ -39,9 +39,11 @@ function  initEvent() {
                 modal({
                     type: 'alert',
                     title: 'WWTL',
-                    text: 'Rating complete!'
+                    text: 'Rating complete!',
+                    callback: function () {
+                        location.href = '/rate/view/' + $('#target-seq').val();
+                    }
                 })
-                location.href = '/rate/view/' + $('#target-seq').val();
             }
         })
     })
