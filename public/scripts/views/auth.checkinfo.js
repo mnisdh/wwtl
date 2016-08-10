@@ -43,7 +43,7 @@ function  initEvent() {
             {
                 modal({
                     type: 'alert',
-                    title: 'Alert',
+                    title: 'WWTL',
                     text: 'Please, select location autocomplate list.'
                 })
             } else{
@@ -63,7 +63,7 @@ function  initEvent() {
                     success: function (res) {
                         modal({
                             type: 'alert',
-                            title: 'Alert',
+                            title: 'WWTL',
                             text: 'Thank you for sharing your information.',
                             callback: function(result) {
                                 location.href = '/home';

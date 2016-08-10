@@ -38,7 +38,7 @@ function  initEvent() {
             success: function (res) {
                 modal({
                     type: 'alert',
-                    title: 'Alert',
+                    title: 'WWTL',
                     text: 'Rating complete!'
                 })
                 location.href = '/rate/view/' + $('#target-seq').val();

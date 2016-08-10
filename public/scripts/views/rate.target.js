@@ -20,7 +20,7 @@ function  initEvent() {
         {
             modal({
                 type: 'alert',
-                title: 'Alert',
+                title: 'WWTL',
                 text: 'Please, select location autocomplate list.'
             })
         } else {

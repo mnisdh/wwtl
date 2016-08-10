@@ -30,8 +30,14 @@ function  initEvent() {
                 locale: $('#locale').val()
             },
             success: function (res) {
-                alert('Complete update your information.');
-                location.reload();
+                modal({
+                    type: 'alert',
+                    title: 'WWTL',
+                    text: 'Complete update your information.',
+                    callback: function(result) {
+                        location.reload();
+                    }
+                })
             }
         })
     })
