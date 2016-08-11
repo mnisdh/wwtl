@@ -11,7 +11,7 @@ $(document).ready(function () {
 
 function init() {
      Datebox();
-     Cropbox($('#oPhoto').val());
+     Cropbox($('#photo').val());
     $(":file").filestyle();
 }
 
