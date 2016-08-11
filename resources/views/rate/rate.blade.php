@@ -32,7 +32,7 @@
                     <a class="btn btn-default btn-na" data-item="<%- v.rate_item%>">N/A</a>
                 </th>
                 <td class="col-md-8">
-                    <input class="slider-item" data-item="<%- v.rate_item %>"
+                    <input class="slider-item" data-item="<%- v.rate_item %>" id="item<%- v.rate_item%>"
                            data-slider-ticks="[0,1,2,3,4,5,6,7,8,9,10]"
                            data-slider-ticks-labels='[0,1,2,3,4,5,6,7,8,9,10]'
                            type="text" data-slider-min="0" data-slider-max="10" data-slider-step="0.1" data-slider-value="5" />
