@@ -59,8 +59,9 @@ class RateController extends Controller
 //        $main->dt_create = date("Y-m-d H:i:s");
 //        $main->rate_type = $id;
 
-        if($main->count() > 0){
-            $score = \App\RateScore::where('target_seq', $_POST['target_seq'])->where('rate_id', $main->rate_id)->delete();
+        if($main){
+            \App\RateScore::where('target_seq', $_POST['target_seq'])->where('rate_id', $main->rate_id)->delete();
+            $score = new \App\RateScore;
         }else{
             $main = new \App\RateMain;
             $score = new \App\RateScore;
