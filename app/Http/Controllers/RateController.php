@@ -7,10 +7,19 @@ use App\Http\Requests;
 class RateController extends Controller
 {
     public function getTarget($id){
-        return view('/rate/target', ['seq' => $id]);
+        if(\Auth::guest()){
+            return redirect('/login');
+        }
+        else{
+            return view('/rate/target', ['seq' => $id]);
+        }
     }
     public function getRate($id){
-        return view('/rate/rate', ['target' => \App\Target::find($id)]);
+        if(\Auth::guest()){
+            return redirect('/login');
+        } else{
+            return view('/rate/rate', ['target' => \App\Target::find($id)]);
+        }
     }
     public function getView($id){
         return view('/rate/view', [

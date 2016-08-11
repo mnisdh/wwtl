@@ -59,6 +59,7 @@ function getType() {
                 $('.slider-item').slider();
 
                 $('.btn-na').on('click', function () {
+                    alert()
                     if ($(this).hasClass('on')) {
                         $(this).removeClass('on');
                         $('#item' + $(this).data('item')).slider('enable');
