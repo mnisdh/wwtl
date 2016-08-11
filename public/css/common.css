@@ -54,3 +54,6 @@ select {
     display: block;
     clear: both;
 }
+.provision{
+    cursor: pointer;
+}

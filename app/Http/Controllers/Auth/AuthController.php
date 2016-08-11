@@ -126,10 +126,14 @@ class AuthController extends Controller
                 return redirect('/');
             }
 
-            $user = $this->findUser($user);
-            if($user == null)
+            $checkuser = $this->findUser($user);
+            if($checkuser == null)
             {
-                return redirect('/home?authCheck='.$oauth);
+                if(isset($_GET['res'])){
+                    $this->CreateUser($user);
+                }else{
+                    return redirect('/home?authCheck='.$oauth);
+                }
             }
             \Auth::login($user);
 

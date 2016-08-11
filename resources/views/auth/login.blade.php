@@ -66,9 +66,9 @@
                 </form>
             </div>
             <div class="col-md-4">
-                <a class="btn-auth provision" id="btn-google" data-href="{!!URL::to('/auth/google')!!}">Sign in with Google</a>
+                <a class="btn-auth" id="btn-google" href="{!!URL::to('/auth/google')!!}">Sign in with Google</a>
                 <br />
-                <a class="btn-auth provision" id="btn-facebook" data-href="{!!URL::to('/auth/facebook')!!}">Sign in with Facebook</a>
+                <a class="btn-auth" id="btn-facebook" href="{!!URL::to('/auth/facebook')!!}">Sign in with Facebook</a>
             </div>
         </div>
     </div>
