@@ -126,14 +126,10 @@ class AuthController extends Controller
                 return redirect('/');
             }
 
-            $checkuser = $this->findUser($user);
+            $checkuser = $this->findOrCreateUser($user);
             if($checkuser == null)
             {
-                if(isset($_GET['res'])){
-                    $this->CreateUser($user);
-                }else{
-                    return redirect('/home?authCheck='.$oauth);
-                }
+                return redirect('/home?authCheck='.$oauth);
             }
             \Auth::login($user);
 
@@ -141,23 +137,21 @@ class AuthController extends Controller
         }
     }
 
-    private function findUser($oAuthUser){
+    private function findOrCreateUser($oAuthUser){
         if($user = User::where('email', $oAuthUser->email)->where('auth_key', $oAuthUser->id)->first()){
             return $user;
+        }
+        else if(isset($_GET['res'])){
+            return User::create([
+                'auth_key'=>$oAuthUser->id,
+                'email'=>$oAuthUser->email,
+                'name'=>$oAuthUser->name,
+                'photo'=>$oAuthUser->avatar,
+                'dt_create' => date("Y-m-d H:i:s")
+            ]);
         }
         else{
             return null;
         }
-    }
-
-    private function createUser($oAuthUser){
-        $user = User::create([
-            'auth_key'=>$oAuthUser->id,
-            'email'=>$oAuthUser->email,
-            'name'=>$oAuthUser->name,
-            'photo'=>$oAuthUser->avatar,
-            'dt_create' => date("Y-m-d H:i:s")
-        ]);
-        return $user;
     }
 }
