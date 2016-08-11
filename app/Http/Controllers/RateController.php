@@ -50,27 +50,26 @@ class RateController extends Controller
             ->where('target_seq', $_POST['target_seq'])
             ->where('rate_type', $id)->first();
         $score = null;
+//
+//        $main = new \App\RateMain;
+//        $score = new \App\RateScore;
+//        $main->target_seq = $_POST['target_seq'];
+//        $main->rate_id = $rate_id;
+//        $main->user_seq =  \Auth::user()->seq;
+//        $main->dt_create = date("Y-m-d H:i:s");
+//        $main->rate_type = $id;
 
-        $main = new \App\RateMain;
-        $score = new \App\RateScore;
-        $main->target_seq = $_POST['target_seq'];
-        $main->rate_id = $rate_id;
-        $main->user_seq =  \Auth::user()->seq;
-        $main->dt_create = date("Y-m-d H:i:s");
-        $main->rate_type = $id;
-
-//        if($main->count() > 0){
-//            $score = \App\RateScore::where('target_seq', $_POST['target_seq'])->where('rate_id', $main->rate_id)->delete();
-//            $score = new \App\RateScore;
-//        }else{
-//            $main = new \App\RateMain;
-//            $score = new \App\RateScore;
-//            $main->target_seq = $_POST['target_seq'];
-//            $main->rate_id = $rate_id;
-//            $main->user_seq =  \Auth::user()->seq;
-//            $main->dt_create = date("Y-m-d H:i:s");
-//            $main->rate_type = $id;
-//        }
+        if($main->count() > 0){
+            $score = \App\RateScore::where('target_seq', $_POST['target_seq'])->where('rate_id', $main->rate_id)->delete();
+        }else{
+            $main = new \App\RateMain;
+            $score = new \App\RateScore;
+            $main->target_seq = $_POST['target_seq'];
+            $main->rate_id = $rate_id;
+            $main->user_seq =  \Auth::user()->seq;
+            $main->dt_create = date("Y-m-d H:i:s");
+            $main->rate_type = $id;
+        }
         $main->user_ip = $_SERVER['REMOTE_ADDR'];
         $main->rate_score = array_sum($scores)/count($scores);
         $main->knew_year = $_POST['year'];
