@@ -61,10 +61,8 @@ class RateController extends Controller
 
         if($main){
             \App\RateScore::where('target_seq', $_POST['target_seq'])->where('rate_id', $main->rate_id)->delete();
-            $score = new \App\RateScore;
         }else{
             $main = new \App\RateMain;
-            $score = new \App\RateScore;
             $main->target_seq = $_POST['target_seq'];
             $main->rate_id = $rate_id;
             $main->user_seq =  \Auth::user()->seq;
@@ -80,6 +78,7 @@ class RateController extends Controller
 
         $idx = 0;
         foreach ($items as $item) {
+            $score = new \App\RateScore;
             $score->target_seq = $_POST['target_seq'];
             $score->rate_id = $rate_id;
             $score->rate_item = $item;
