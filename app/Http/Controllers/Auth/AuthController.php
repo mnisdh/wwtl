@@ -141,7 +141,7 @@ class AuthController extends Controller
         if($user = User::where('email', $oAuthUser->email)->where('auth_key', $oAuthUser->id)->first()){
             return $user;
         }
-        else if(isset($_GET['res'])){
+        else if(isset($_GET['reg'])){
             return User::create([
                 'auth_key'=>$oAuthUser->id,
                 'email'=>$oAuthUser->email,
