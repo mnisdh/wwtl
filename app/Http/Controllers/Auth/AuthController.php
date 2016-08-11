@@ -116,7 +116,7 @@ class AuthController extends Controller
         return Socialite::driver($oauth)->redirect();
     }
 
-    public function handleAuthCallback($oauth, $reg){
+    public function handleAuthCallback($oauth){
         if(isset($_GET['error'])){
             return redirect()->intended('/');
         }else{
@@ -126,7 +126,7 @@ class AuthController extends Controller
                 return redirect('/');
             }
 
-            $user = $this->findOrCreateUser($user, $reg);
+            $user = $this->findOrCreateUser($user, isset($_GET['reg']));
             if($user == null)
             {
                 return redirect('/home?authCheck='.$oauth);
@@ -141,7 +141,7 @@ class AuthController extends Controller
         if($user = User::where('email', $oAuthUser->email)->where('auth_key', $oAuthUser->id)->first()){
             return $user;
         }
-        else if(isset($reg)){
+        else if($reg){
             return User::create([
                 'auth_key'=>$oAuthUser->id,
                 'email'=>$oAuthUser->email,

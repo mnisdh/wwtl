@@ -22,7 +22,7 @@ Route::post('authmail', 'Auth\AuthController@sendMail');
 Route::get('authLoginProcess/{id}', 'Auth\AuthController@authLoginProcess');
 
 Route::get('auth/{oauth}', 'Auth\AuthController@redirectToAuth');
-Route::get('auth/{oauth}/callback/{reg}', 'Auth\AuthController@handleAuthCallback');
+Route::get('auth/{oauth}/callback', 'Auth\AuthController@handleAuthCallback');
 
 Route::controller('user', 'UserController');
 Route::controller('admin', 'AdminController');
