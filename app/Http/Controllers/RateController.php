@@ -23,7 +23,7 @@ class RateController extends Controller
     }
     public function getView($id){
         return view('/rate/view', [
-            'target' => \App\Target::find($id),
+            'target' => \App\Target::find($id)->first(),
             'type' => DB::table('v_rate_main')->select('rate_type', 'name')->where('target_seq', $id)->groupBy('rate_type')->get(),
             'main' => DB::table('v_rate_main')->where('target_seq', $id)->get(),
             'score' => DB::table('v_rate_main')->where('target_seq', $id)->avg('rate_score')]);
