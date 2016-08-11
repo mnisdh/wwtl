@@ -43,7 +43,9 @@
                     </table>
                 </div>
                 <div class="col-md-3 text-center target-score">
+                    @if($score != null && $score != '')
                     {{ substr($score, 0,4) }}
+                    @endif
                 </div>
             </div>
         </div>
