@@ -78,9 +78,9 @@
                         </form>
                     </div>
                     <div class="col-md-4">
-                        <a class="btn-auth" id="btn-google" href="{!!URL::to('/auth/google?reg=true')!!}">Sign in with Google</a>
+                        <a class="btn-auth" id="btn-google" href="{!!URL::to('/auth/google')!!}">Sign up with Google</a>
                         <br />
-                        <a class="btn-auth" id="btn-facebook" href="{!!URL::to('/auth/facebook?reg=true')!!}">Sign in with Facebook</a>
+                        <a class="btn-auth" id="btn-facebook" href="{!!URL::to('/auth/facebook')!!}">Sign up with Facebook</a>
                     </div>
                 </div>
             </div>
