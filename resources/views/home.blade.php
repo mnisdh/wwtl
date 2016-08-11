@@ -17,7 +17,7 @@
             <div class="row" id="show-map">
                 <div class="col-md-3"><h3>Filter Map!!</h3></div>
                 <div class="col-md-9 text-right">
-                    <label>keep <input id="chk-country" type="checkbox" /></label>
+                    <label class="checkbox-inline">keep<input id="chk-country" type="checkbox" /></label>
                     <select id="country" disabled>
                         @foreach($country as $data)
                             <option value="{{$data->country_code}}">{{$data->country_name}}</option>
