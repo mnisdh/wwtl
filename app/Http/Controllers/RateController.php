@@ -27,7 +27,6 @@ class RateController extends Controller
             'type' => DB::table('v_rate_main')->select('rate_type', 'name')->where('target_seq', $id)->groupBy('rate_type')->get(),
             'main' => DB::table('v_rate_main')->where('target_seq', $id)->get(),
             'score' => DB::table('v_rate_main')->where('target_seq', $id)->avg('rate_score')]);
-            //'score' => DB::table('v_rate_score')->where('target_seq', $id)->get()]);
     }
 
     public function getType($id){

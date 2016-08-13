@@ -13,16 +13,20 @@ $(document).ready(function () {
 function init() {
     $('#sel-type').trigger('change');
     getReply();
-    if($('#list-user .rate').length > 0){
-        $('.rate').eq(0).trigger('click')
-    }
 }
 
 function  initEvent() {
     $('#sel-type').on('change',function () {
         if($(this).val() > 0)
         {
-            $('.rate[data-type='+$(this).val()+'], #recent').show();
+            $('.rate, .info').hide();
+            $('.rate[data-type='+$(this).val()+']').show();
+            $('.rate[data-type='+$(this).val()+']').eq(0).trigger('click')
+        }
+        else{
+            $('.rate').show();
+            if($('.rate').length > 0)
+                $('.rate').eq(0).trigger('click')
         }
     })
     $('.rate').on('click', function () {

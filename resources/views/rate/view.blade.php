@@ -98,6 +98,7 @@
             Featured :
             <select id="sel-type">
                 @if(count($type) > 0)
+                    <option value="-1">All</option>
                     @foreach($type as $data )
                         <option value="{{$data->rate_type}}">{{$data->name}}</option>
                     @endforeach
@@ -126,7 +127,7 @@
                                data-target="{{$data->target_seq}}"
                                data-rate="{{$data->rate_id}}"
                                data-type="{{$data->rate_type}}">
-                                <img src="{{ $data->photo }}" />{{ $data->nick_name }}
+                                <img src="{{ $data->photo }}" />{{ $data->nick_name }} <span>rate {{$data->name}}</span>
                             </a>
                             <div class="info">
                                 <span id="score">{{ substr($data->rate_score, 0, 4)  }}</span>
