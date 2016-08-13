@@ -70,7 +70,7 @@
                 <p class="creator">
                     <a><%- v.nick_name %></a> <img src="<%- v.photo %>" /> |
                     <span><%- v.update_dt %></span>
-                    <% if(v.seq ==  {{ $user }}){ %>
+                    <% if(v.seq ==  '{{ $user }}'){ %>
                     <a class="update" data-id="<%- v.id %>"><i class="glyphicon glyphicon-edit"></i></a><a class="delete" data-id="<%- v.id %>"><i class="glyphicon glyphicon-trash"></i></a>
                     <%}%>
                 </p>
@@ -111,30 +111,32 @@
             @if(count($main) > 0)
                 <div class="row-fluid">
                     <div class="col-md-7 text-left" id="view-rate">
-                        <div id="info">
-                            <span id="score"></span>
-                            <span id="year"><b>Knew year :</b> <span></span></span>
-                            <p class="text-right" id="dt">Update : <span></span></p>
-                            <div id="comment">
-                                <b>Comment ></b>
-                                <span class="text-left"></span>
-                            </div>
+                        <div class="text-right">
+                            <a title="All rating score" class="btn btn-default btn-sm" id="chart-all"><i class="glyphicon glyphicon-align-left"></i></a>
+                            <select id="sel-sort">
+                                <option value="hl">High to Low Score</option>
+                                <option value="lh">Low to Hieght Score</option>
+                            </select>
                         </div>
-                        <div id="recent">
-                            Recently Top 5
-                        </div>
-                        <div id="chart">chart</div>
+                        <div id="chart"><canvas id="myChart" width="50" height="50"></canvas></div>
                     </div>
                     <div class="col-md-5 text-left" id="list-user">
                         @foreach($main as $data)
                             <a class="rate"
-                               data-type="{{$data->rate_type}}"
-                               data-score="{{ substr($data->rate_score, 0, 4)  }}"
-                               data-year="{{ $data->knew_year }}"
-                               data-dt="2016/05/01"
-                               data-comment="{{ $data->comment }}">
+                               data-target="{{$data->target_seq}}"
+                               data-rate="{{$data->rate_id}}"
+                               data-type="{{$data->rate_type}}">
                                 <img src="{{ $data->photo }}" />{{ $data->nick_name }}
                             </a>
+                            <div class="info">
+                                <span id="score">{{ substr($data->rate_score, 0, 4)  }}</span>
+                                <span id="year"><b>Knew year :</b> <span>{{ $data->knew_year }}</span></span>
+                                <p class="text-right" id="dt">Update : <span>{{ substr($data->dt_update, 0, 10)}}</span></p>
+                                <div id="comment">
+                                    <b>Comment ></b>
+                                    <span class="text-left">{{ $data->comment }}</span>
+                                </div>
+                            </div>
                         @endforeach
                     </div>
                 </div>
@@ -147,8 +149,8 @@
 
 
 @section('plugin')
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.1/Chart.min.js"></script>
 @endsection
 @section('scripts')
     <script src="/scripts/views/rate.view.js"></script>
-
 @endsection

@@ -50,14 +50,6 @@ class RateController extends Controller
             ->where('target_seq', $_POST['target_seq'])
             ->where('rate_type', $id)->first();
         $score = null;
-//
-//        $main = new \App\RateMain;
-//        $score = new \App\RateScore;
-//        $main->target_seq = $_POST['target_seq'];
-//        $main->rate_id = $rate_id;
-//        $main->user_seq =  \Auth::user()->seq;
-//        $main->dt_create = date("Y-m-d H:i:s");
-//        $main->rate_type = $id;
 
         if($main){
             \App\RateScore::where('target_seq', $_POST['target_seq'])->where('rate_id', $main->rate_id)->delete();
@@ -189,5 +181,12 @@ class RateController extends Controller
     public  function putReply($id){
         $data = \App\Reply::find($id);
         $data->delete();
+    }
+
+    public function getChart(){
+        $data = DB::table('v_rate_score')
+            ->select('name', 'score')
+            ->where('target_seq', $_GET['target_seq'])->where('rate_id', $_GET['rate_id'])->get();
+        return $data;
     }
 }

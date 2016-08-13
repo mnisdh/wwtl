@@ -28,41 +28,34 @@
     width:100%;
     margin:10px 0px 10px 0px
 }
-#view-rate #info{
-    display: none;
-}
-
-#view-rate #score, #recent{
+.info #score{
     font-size: 30px;
     font-weight:bolder;
     color:#1b6d85;
 }
-
-#view-rate #year{
+.info {
+    border-top: #eee solid 1px;
+    border-bottom: #eee solid 1px;
+}
+.info #year{
     color:#999;
     margin-left:10px;
 }
-#view-rate #year b{
+.info #year b{
     font-size:10px;
     font-weight:normal;
 }
-#view-rate #dt{
+.info #dt{
     margin-top: -25px;
     font-size:10px;
 }
-#view-rate #comment{
+.info #comment{
     margin-bottom:10px;
     word-break:break-all;
 }
-#view-rate #comment b{
+.info #comment b{
     color: #999;
     margin-right:10px;
-}
-
-#view-rate #chart{
-    border: 1px solid #eee;
-    text-align: center;
-    height:200px;
 }
 
 #list-user{
@@ -72,7 +65,7 @@
     padding:10px;
 }
 #list-user a{
-    margin:10px;
+    padding:10px;
     cursor: pointer;
     display: block;
 }
@@ -80,6 +73,12 @@
     width:30px;
     height:30px;
     margin-right:20px;
+}
+#list-user .rate.on{
+    background-color: #efefef;
+}
+#list-user .info{
+    display: none;
 }
 
 #list-reply div{
