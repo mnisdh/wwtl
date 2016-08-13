@@ -81,6 +81,8 @@ function getChart(target_seq, rate_id){
             })
 
             dispChart(hllables, hldatas);
+
+            $('#sel-sort').val('hl');
             $('#sel-sort').unbind('change');
             $('#sel-sort').bind('change', function () {
                 if($(this).val() == 'hl'){
