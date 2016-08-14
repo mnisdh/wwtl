@@ -12,8 +12,9 @@
         <div class="panel-heading">My Page
             <a id="btn-update" class="btn btn-primary btn-sm" href="#" role="button">Update</a>
             @if(\Auth::user()->auth_key = '')
-            <a href="/password/reset" class="btn btn-default btn-sm" href="#" role="button">Reset password</a></div>
+            <a href="/password/reset" class="btn btn-default btn-sm" href="#" role="button">Reset password</a>
             @endif
+        </div>
         <div class="panel-body">
             <div class="row">
                 <div class="col-md-5">

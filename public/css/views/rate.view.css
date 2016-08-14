@@ -1,3 +1,9 @@
+.btn-rate{
+    background-color: #D9534F;
+    color:#fff;
+    float: right;
+    margin-top:-4px;
+}
 .photo img{
     width:150px;
     height:150px;
