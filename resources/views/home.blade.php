@@ -15,9 +15,9 @@
                 @endforeach
             </div>
             <div class="row" id="show-map">
-                <div class="col-md-3"><h3>Filter Map!!</h3></div>
+                <div class="col-md-3"><h3>Filter by location!!</h3></div>
                 <div class="col-md-9 text-right">
-                    <label class="checkbox-inline"><input id="chk-country" type="checkbox" />keep</label>
+                    <label class="checkbox-inline"><input id="chk-country" type="checkbox" />Search only in</label>
                     <select id="country" disabled>
                         @foreach($country as $data)
                             <option value="{{$data->country_code}}">{{$data->country_name}}</option>

@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fb3ee1a2-62b5-481a-92f0-e043a3eb5afa" name="Default" comment="" />
-    <list id="91a903ed-71db-4a96-83be-76d8bef75f14" name="New changelist" comment="">
+    <list default="true" id="fb3ee1a2-62b5-481a-92f0-e043a3eb5afa" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" />
     </list>
     <ignored path="wwtl.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,16 +47,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="56" column="86" selection-start-line="56" selection-start-column="86" selection-end-line="56" selection-end-column="131" />
+            <state relative-caret-position="82">
+              <caret line="19" column="94" selection-start-line="19" selection-start-column="94" selection-end-line="19" selection-end-column="94" />
               <folding>
-                <element signature="e#3898#3921#0#HTML" expanded="true" />
-                <element signature="e#5866#5941#0#HTML" expanded="true" />
-                <element signature="e#5982#6020#0#HTML" expanded="true" />
-                <element signature="e#6093#9221#0#HTML" expanded="false" />
+                <element signature="e#3916#3939#0#HTML" expanded="true" />
+                <element signature="e#5884#5959#0#HTML" expanded="true" />
+                <element signature="e#6000#6038#0#HTML" expanded="true" />
+                <element signature="e#6111#9239#0#HTML" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -93,7 +92,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rate.view.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="rate.view.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/views/rate.view.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
@@ -185,11 +184,11 @@
         <option value="$PROJECT_DIR$/public/css/views/home.css" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/RateController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
-        <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
         <option value="$PROJECT_DIR$/public/scripts/views/home.js" />
         <option value="$PROJECT_DIR$/resources/views/auth/mypage.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/rate/view.blade.php" />
         <option value="$PROJECT_DIR$/public/css/views/rate.view.css" />
+        <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
       </list>
     </option>
   </component>
@@ -571,7 +570,7 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="fb3ee1a2-62b5-481a-92f0-e043a3eb5afa" name="Default" comment="" />
-      <changelist id="91a903ed-71db-4a96-83be-76d8bef75f14" name="New changelist" comment="" />
+      <changelist id="" name="New changelist" comment="" />
       <created>1466855542350</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -580,14 +579,7 @@
       <workItem from="1466901251752" duration="29010000" />
       <workItem from="1470456574892" duration="473000" />
       <workItem from="1470457202706" duration="42161000" />
-      <workItem from="1470880169329" duration="22322000" />
-    </task>
-    <task id="LOCAL-00016" summary="oAuth Image">
-      <created>1470748283038</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1470748283038</updated>
+      <workItem from="1470880169329" duration="22480000" />
     </task>
     <task id="LOCAL-00017" summary="oAuth Image">
       <created>1470748611194</created>
@@ -925,11 +917,18 @@
       <option name="project" value="LOCAL" />
       <updated>1471149909438</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="New changelist">
+      <created>1471149939706</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1471149939707</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96108000" />
+    <option name="totallyTimeSpent" value="96266000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1014,7 +1013,8 @@
     <MESSAGE value="oauth provision issue" />
     <MESSAGE value="add Chart!!" />
     <MESSAGE value="detail search" />
-    <option name="LAST_COMMIT_MESSAGE" value="detail search" />
+    <MESSAGE value="New changelist" />
+    <option name="LAST_COMMIT_MESSAGE" value="New changelist" />
     <option name="PRESELECT_EXISTING_CHANGELIST" value="false" />
   </component>
   <component name="XDebuggerManager">
@@ -1386,19 +1386,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="56" column="86" selection-start-line="56" selection-start-column="86" selection-end-line="56" selection-end-column="131" />
-          <folding>
-            <element signature="e#3898#3921#0#HTML" expanded="true" />
-            <element signature="e#5866#5941#0#HTML" expanded="true" />
-            <element signature="e#5982#6020#0#HTML" expanded="true" />
-            <element signature="e#6093#9221#0#HTML" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/rate/view.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -1420,6 +1407,19 @@
         <state relative-caret-position="60">
           <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="82">
+          <caret line="19" column="94" selection-start-line="19" selection-start-column="94" selection-end-line="19" selection-end-column="94" />
+          <folding>
+            <element signature="e#3916#3939#0#HTML" expanded="true" />
+            <element signature="e#5884#5959#0#HTML" expanded="true" />
+            <element signature="e#6000#6038#0#HTML" expanded="true" />
+            <element signature="e#6111#9239#0#HTML" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
