@@ -8,7 +8,7 @@
     <input type="hidden" value="{{ $target->seq }}" id="target" />
     <div class="panel panel-default">
         <div class="panel-heading">
-            All about this person <a class="btn btn-rate btn-sm" href="/rate/target/-1"><i class="glyphicon glyphicon-thumbs-up"></i> Rate Someone</a>
+            All about this person <a class="btn btn-rate btn-sm" href="/rate/target/-1"><i class="glyphicon glyphicon-thumbs-up"></i> Rate Someone Else</a>
         </div>
         <div class="panel-body">
             <div class="row">
