@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fb3ee1a2-62b5-481a-92f0-e043a3eb5afa" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/views/home.css" afterPath="$PROJECT_DIR$/public/css/views/home.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/rate/view.blade.php" afterPath="$PROJECT_DIR$/resources/views/rate/view.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" />
     </list>
     <ignored path="wwtl.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,23 +35,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="17" column="61" selection-start-line="17" selection-start-column="61" selection-end-line="17" selection-end-column="61" />
+            <state relative-caret-position="270">
+              <caret line="45" column="37" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
               <folding>
                 <element signature="e#744#764#0#HTML" expanded="true" />
-                <element signature="e#3801#3824#0#HTML" expanded="true" />
-                <element signature="e#5769#5844#0#HTML" expanded="true" />
-                <element signature="e#5885#5923#0#HTML" expanded="true" />
-                <element signature="e#5996#9124#0#HTML" expanded="false" />
+                <element signature="e#4033#4056#0#HTML" expanded="true" />
+                <element signature="e#6001#6076#0#HTML" expanded="true" />
+                <element signature="e#6117#6155#0#HTML" expanded="true" />
+                <element signature="e#6228#9356#0#HTML" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/views/home.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="186">
@@ -185,10 +184,10 @@
         <option value="$PROJECT_DIR$/public/scripts/views/home.js" />
         <option value="$PROJECT_DIR$/resources/views/auth/mypage.blade.php" />
         <option value="$PROJECT_DIR$/public/css/views/rate.view.css" />
-        <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
         <option value="$PROJECT_DIR$/public/scripts/views/rate.view.js" />
         <option value="$PROJECT_DIR$/resources/views/rate/view.blade.php" />
         <option value="$PROJECT_DIR$/public/css/views/home.css" />
+        <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
       </list>
     </option>
   </component>
@@ -579,14 +578,7 @@
       <workItem from="1466901251752" duration="29010000" />
       <workItem from="1470456574892" duration="473000" />
       <workItem from="1470457202706" duration="42161000" />
-      <workItem from="1470880169329" duration="23383000" />
-    </task>
-    <task id="LOCAL-00021" summary="prevision">
-      <created>1470753572834</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1470753572834</updated>
+      <workItem from="1470880169329" duration="23648000" />
     </task>
     <task id="LOCAL-00022" summary="prevision">
       <created>1470753834630</created>
@@ -924,11 +916,18 @@
       <option name="project" value="LOCAL" />
       <updated>1471159807420</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="New changelist">
+      <created>1471160038686</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1471160038686</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97169000" />
+    <option name="totallyTimeSpent" value="97434000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1386,20 +1385,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="17" column="61" selection-start-line="17" selection-start-column="61" selection-end-line="17" selection-end-column="61" />
-          <folding>
-            <element signature="e#744#764#0#HTML" expanded="true" />
-            <element signature="e#3801#3824#0#HTML" expanded="true" />
-            <element signature="e#5769#5844#0#HTML" expanded="true" />
-            <element signature="e#5885#5923#0#HTML" expanded="true" />
-            <element signature="e#5996#9124#0#HTML" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/scripts/views/rate.view.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-18">
@@ -1421,6 +1406,20 @@
         <state relative-caret-position="186">
           <caret line="193" column="12" selection-start-line="193" selection-start-column="12" selection-end-line="193" selection-end-column="12" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="45" column="37" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
+          <folding>
+            <element signature="e#744#764#0#HTML" expanded="true" />
+            <element signature="e#4033#4056#0#HTML" expanded="true" />
+            <element signature="e#6001#6076#0#HTML" expanded="true" />
+            <element signature="e#6117#6155#0#HTML" expanded="true" />
+            <element signature="e#6228#9356#0#HTML" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

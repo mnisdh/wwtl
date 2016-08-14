@@ -42,6 +42,9 @@
                 <div class="col-xs-12 disc">
                     <b>You can find anyone.</b> If you search by name, nick name, birthday, city, state or country.
                 </div>
+                <div class="col-xs-12 disc">
+                    <b>You can rate anyone.</b> Rate your girlfriend, boyfriend, boss, ex-wife, ex-husband, the mail man, your plumber, teachers, parents.  ANYONE!
+                </div>
                 <div class="col-xs-12 txt">
                     <i class="glyphicon glyphicon-user"></i>
                     <input type="text" id="target" placeholder="name, nick name or year of birth">
