@@ -85,7 +85,7 @@
                             <a href="/rate/view/{{ $data->target_seq }}">
                                 <img src="{{ $data->photo }}" />
                                 <span>{{ $data->nick_name }}</span>
-                                <p>{{ $data->name }} / score: <b>{{ substr($data->rate_score, 0, 3) }}</b></p>
+                                <p>{{ $data->name }} / score: <b>{{ substr($data->rate_score, 0, 4) }}</b></p>
                             </a>
                         @endforeach
                     </div>
@@ -97,7 +97,7 @@
                             <a href="/rate/view/{{ $data->target_seq }}">
                                 <img src="{{ $data->photo }}" />
                                 <span>{{ $data->nick_name }}</span>
-                                <p>{{ $data->name }} / score: <b>{{ substr($data->rate_score, 0, 3)}}</b></p>
+                                <p>{{ $data->name }} / score: <b>{{ substr($data->rate_score, 0, 4)}}</b></p>
                             </a>
                         @endforeach
                     </div>
