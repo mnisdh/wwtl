@@ -57,7 +57,7 @@
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="{{ url('/user/mypage') }}">My Profile</a></li>
                                 @if(Auth::user()->admin_yn == 'Y')
-                                <li><a href="{{ url('/admin/ratetype') }}">Amdin</a></li>
+                                <li><a href="{{ url('/admin/ratetype') }}">Admin</a></li>
                                 @endif
                                 <li><a href="{{ url('/logout') }}">Logout</a></li>
                             </ul>

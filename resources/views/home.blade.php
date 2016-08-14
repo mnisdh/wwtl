@@ -122,7 +122,7 @@
                             <%if(data.length> 0){%>
                             <hr />
                             <% if(data[0].length > 0 ){%>
-                            <b>Target</b>
+                            <b>Person who has been rated</b>
                             <% _.each(data[0], function(v, i){%>
                             <a href="/rate/view/<%- v.seq %>">
                                 <img src="<%- v.photo %>" />
@@ -134,7 +134,7 @@
                             <%})%>
                             <hr />
                             <%} if(data[1].length > 0 ){%>
-                            <b>Target's Job</b>
+                            <b>Person's Job</b>
                             <% _.each(data[1], function(v, i){%>
                             <a href="/rate/view/<%- v.seq %>">
                                 <img src="<%- v.photo %>" />
@@ -146,7 +146,7 @@
                             <%})%>
                             <hr />
                             <%} if(data[2].length > 0){%>
-                            <b>Creator</b>
+                            <b>Who first rated the person</b>
                             <% _.each(data[2], function(v, i){%>
                             <a>
                                 <img src="<%- v.photo %>" />
@@ -155,7 +155,7 @@
                             <%})%>
                             <hr />
                             <%} if(data[3].length > 0){%>
-                            <b>Creator</b>
+                            <b>Who first rated the person</b>
                             <% _.each(data[3], function(v, i){%>
                             <a href="/rate/view/<%- v.seq %>">
                                 <img src="<%- v.photo %>" />
@@ -167,7 +167,7 @@
                             <%})%>
                             <hr />
                             <%} if(data[4].length > 0){%>
-                            <b>Reply Comment</b>
+                            <b>All comment about the person</b>
                             <% _.each(data[4], function(v, i){%>
                             <a href="/rate/view/<%- v.seq %>">
                                 <img src="<%- v.photo %>" />
