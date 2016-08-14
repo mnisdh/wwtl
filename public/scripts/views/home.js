@@ -56,7 +56,13 @@ function initEvent(){
     
     // search-detail
     $('#btn-condi-add').on('click', function () {
-        $( ".condition" ).clone().appendTo( ".search-detail" );
+        $( ".condition" ).eq(0).clone().appendTo(".search-detail");
+    })
+
+    $('#btn-condi-remove').('click', function () {
+        var condi = $( ".condition" ).eq(0);
+        $('.condition').remove();
+        condi.appendTo(".search-detail");
     })
 }
 
