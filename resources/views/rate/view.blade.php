@@ -131,7 +131,7 @@
                             </a>
                             <div class="info">
                                 <span id="score">{{ substr($data->rate_score, 0, 4)  }}</span>
-                                <span id="year"><b>Knew year :</b> <span>{{ $data->knew_year }}</span></span>
+                                <span id="year"><b>Year known :</b> <span>{{ $data->knew_year }}</span></span>
                                 <p class="text-right" id="dt">Update : <span>{{ substr($data->dt_update, 0, 10)}}</span></p>
                                 <div id="comment">
                                     <b>Comment ></b>
