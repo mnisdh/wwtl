@@ -15,7 +15,7 @@
                 @endforeach
             </div>
             <div class="row" id="show-map">
-                <div class="col-md-3"><h3>Filter by location!!</h3></div>
+                <div class="col-md-3"><h3 style="width:200px;">Filter by location!!</h3></div>
                 <div class="col-md-9 text-right">
                     <label class="checkbox-inline"><input id="chk-country" type="checkbox" />Search only in</label>
                     <select id="country" disabled>
@@ -40,8 +40,7 @@
         <div class="col-md-5 search">
             <div class="row">
                 <div class="col-xs-12 disc">
-                    <b>You can find someone.</b> If you search person, you can see pictures and if you search country or city, you can see 'Filter map'.<br />
-                    Check 'keep' in 'Filter map'. Then you can search person in the country.
+                    <b>You can find anyone.</b> If you search by name, nick name, birthday, city, state or country.
                 </div>
                 <div class="col-xs-12 txt">
                     <i class="glyphicon glyphicon-user"></i>

@@ -50,13 +50,14 @@
       <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="82">
-              <caret line="19" column="94" selection-start-line="19" selection-start-column="94" selection-end-line="19" selection-end-column="94" />
+            <state relative-caret-position="60">
+              <caret line="17" column="61" selection-start-line="17" selection-start-column="61" selection-end-line="17" selection-end-column="61" />
               <folding>
-                <element signature="e#3916#3939#0#HTML" expanded="true" />
-                <element signature="e#5884#5959#0#HTML" expanded="true" />
-                <element signature="e#6000#6038#0#HTML" expanded="true" />
-                <element signature="e#6111#9239#0#HTML" expanded="false" />
+                <element signature="e#744#764#0#HTML" expanded="true" />
+                <element signature="e#3801#3824#0#HTML" expanded="true" />
+                <element signature="e#5769#5844#0#HTML" expanded="true" />
+                <element signature="e#5885#5923#0#HTML" expanded="true" />
+                <element signature="e#5996#9124#0#HTML" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -65,7 +66,7 @@
       <file leaf-file-name="home.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/views/home.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="517">
+            <state relative-caret-position="2820">
               <caret line="188" column="1" selection-start-line="188" selection-start-column="1" selection-end-line="188" selection-end-column="1" />
               <folding />
             </state>
@@ -579,14 +580,7 @@
       <workItem from="1466901251752" duration="29010000" />
       <workItem from="1470456574892" duration="473000" />
       <workItem from="1470457202706" duration="42161000" />
-      <workItem from="1470880169329" duration="22480000" />
-    </task>
-    <task id="LOCAL-00017" summary="oAuth Image">
-      <created>1470748611194</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1470748611194</updated>
+      <workItem from="1470880169329" duration="22876000" />
     </task>
     <task id="LOCAL-00018" summary="oAuth Image">
       <created>1470748697659</created>
@@ -924,11 +918,18 @@
       <option name="project" value="LOCAL" />
       <updated>1471149939707</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="New changelist">
+      <created>1471158983823</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1471158983824</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96266000" />
+    <option name="totallyTimeSpent" value="96662000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1394,14 +1395,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/views/home.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
-          <caret line="188" column="1" selection-start-line="188" selection-start-column="1" selection-end-line="188" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/views/rate.view.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1410,15 +1403,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/views/home.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2820">
+          <caret line="188" column="1" selection-start-line="188" selection-start-column="1" selection-end-line="188" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="19" column="94" selection-start-line="19" selection-start-column="94" selection-end-line="19" selection-end-column="94" />
+        <state relative-caret-position="60">
+          <caret line="17" column="61" selection-start-line="17" selection-start-column="61" selection-end-line="17" selection-end-column="61" />
           <folding>
-            <element signature="e#3916#3939#0#HTML" expanded="true" />
-            <element signature="e#5884#5959#0#HTML" expanded="true" />
-            <element signature="e#6000#6038#0#HTML" expanded="true" />
-            <element signature="e#6111#9239#0#HTML" expanded="false" />
+            <element signature="e#744#764#0#HTML" expanded="true" />
+            <element signature="e#3801#3824#0#HTML" expanded="true" />
+            <element signature="e#5769#5844#0#HTML" expanded="true" />
+            <element signature="e#5885#5923#0#HTML" expanded="true" />
+            <element signature="e#5996#9124#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
