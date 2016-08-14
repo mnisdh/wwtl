@@ -59,7 +59,7 @@ function initEvent(){
         $( ".condition" ).eq(0).clone().appendTo(".search-detail");
     })
 
-    $('#btn-condi-remove').('click', function () {
+    $('#btn-condi-remove').on('click', function () {
         var condi = $( ".condition" ).eq(0);
         $('.condition').remove();
         condi.appendTo(".search-detail");
