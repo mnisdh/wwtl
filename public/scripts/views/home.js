@@ -53,6 +53,11 @@ function initEvent(){
         if(e.keyCode == 13)
             search_all();
     })
+    
+    // search-detail
+    $('#btn-condi-add').on('click', function () {
+        $( ".condition" ).clone().appendTo( ".search-detail" );
+    })
 }
 
 function search(type) {

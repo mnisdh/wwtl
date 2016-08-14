@@ -117,6 +117,7 @@
                         <p style="color:#bbb; text-align: center">Search all!!</p>
                     </div>
                     <script type="text/template" id="tmpl-result-all">
+                        <%if(data.length> 0){%>
                         <hr />
                         <% if(data[0].length > 0 ){%>
                         <b>Target</b>
@@ -175,6 +176,9 @@
                             </p>
                         </a>
                         <%})}%>
+                        <%}else{%>
+                            <p class="text-center">No data</p>
+                        <%}%>
                     </script>
                 </div>
             </div>
@@ -201,11 +205,11 @@
                             @endfor
                         </select>
                     </div>
-                    <div class="text-right">
-                        <a class="btn btn-default btn-sm">Add condition</a>
-                        <a class="btn btn-default btn-sm">Remove all</a>
-                        <a class="btn btn-default btn-sm" id="search-detail">Search</a>
-                    </div>
+                </div>
+                <div class="text-right">
+                    <a id="btn-condi-add" class="btn btn-default btn-sm">Add condition</a>
+                    <a id="btn-condi-remove" class="btn btn-default btn-sm">Remove all</a>
+                    <a id="btn-condi-search" class="btn btn-default btn-sm" id="search-detail">Search</a>
                 </div>
             </div>
         </div>
