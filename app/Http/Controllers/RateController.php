@@ -152,6 +152,24 @@ class RateController extends Controller
         return [$nameTarget, $jobTarget, $nameUser, $jobUser, $reply];
     }
 
+    public function postSearchdetail(){
+        $job = '%'.$_POST['job'].'%';
+        $type = $_POST['type'];
+        $birth = $_POST['birth'].'%';
+
+        $target = DB::table('v_target')->Where('job', 'like', $job);
+        if($type != '')
+            $target = $target->Where('rate_type', $type);
+        if($birth != '')
+            $target = $target->Where('birth', 'like', $birth);
+        $target = $target->where(function($query){
+            $name = '%'.$_POST['name'].'%';
+            return $query->where('first_name','like', $name)
+                ->orWhere('last_name','like', $name)
+                ->orWhere('nick_name','like', $name);
+        });
+        return $target->groupBy('seq')->get();
+    }
     public function getReply($id) {
         $reply = DB::table('reply')
             ->select('reply.id', 'user.photo','user.seq', 'user.nick_name', 'reply.comment', 'reply.update_dt')

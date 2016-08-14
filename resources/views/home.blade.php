@@ -76,146 +76,184 @@
 @endsection
 @section('content')
     @if(!Auth::guest())
-    <div class="row" style="margin-top:20px">
-        <div class="col-md-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">Who rated me?</div>
-                <div class="panel-body rate">
-                    @foreach($rateme as $data)
-                        <a href="/rate/view/{{ $data->target_seq }}">
-                            <img src="{{ $data->photo }}" />
-                            <span>{{ $data->nick_name }}</span>
-                            <p>{{ $data->name }} / score: <b>{{ $data->rate_score }}</b></p>
-                        </a>
-                    @endforeach
+        <div class="row" style="margin-top:20px">
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Who rated me?</div>
+                    <div class="panel-body rate">
+                        @foreach($rateme as $data)
+                            <a href="/rate/view/{{ $data->target_seq }}">
+                                <img src="{{ $data->photo }}" />
+                                <span>{{ $data->nick_name }}</span>
+                                <p>{{ $data->name }} / score: <b>{{ $data->rate_score }}</b></p>
+                            </a>
+                        @endforeach
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Person who I rated.</div>
+                    <div class="panel-body rate">
+                        @foreach($rated as $data)
+                            <a href="/rate/view/{{ $data->target_seq }}">
+                                <img src="{{ $data->photo }}" />
+                                <span>{{ $data->nick_name }}</span>
+                                <p>{{ $data->name }} / score: <b>{{ $data->rate_score }}</b></p>
+                            </a>
+                        @endforeach
+                    </div>
                 </div>
             </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">Person who I rated.</div>
-                <div class="panel-body rate">
-                    @foreach($rated as $data)
-                    <a href="/rate/view/{{ $data->target_seq }}">
-                        <img src="{{ $data->photo }}" />
-                        <span>{{ $data->nick_name }}</span>
-                        <p>{{ $data->name }} / score: <b>{{ $data->rate_score }}</b></p>
-                    </a>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-        <div class="col-md-8">
-            <div class="panel panel-default">
-                <div class="panel-body search-all">
-                    <div class="input-group">
-                        <input type="text" class="form-control" id="val-all" />
-                        <div class="input-group-btn">
-                            <a class="btn btn-primary" id="search-all">Search</a>
+            <div class="col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-body search-all">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="val-all" />
+                            <div class="input-group-btn">
+                                <a class="btn btn-primary" id="search-all">Search</a>
+                            </div>
                         </div>
-                    </div>
-                    <div id="result-all" class="rate">
-                        <p style="font-size:100px; font-weight:bolder; color:#ccc; text-align: center">WWTL</p>
-                        <p style="color:#bbb; text-align: center">Search all!!</p>
-                    </div>
-                    <script type="text/template" id="tmpl-result-all">
-                        <%if(data.length> 0){%>
-                        <hr />
-                        <% if(data[0].length > 0 ){%>
-                        <b>Target</b>
-                        <% _.each(data[0], function(v, i){%>
-                        <a href="/rate/view/<%- v.seq %>">
-                            <img src="<%- v.photo %>" />
-                            <span><%- v.nick_name %></span>
-                            <p>
-                                <%-v.name %>
-                            </p>
-                        </a>
-                        <%})%>
-                        <hr />
-                        <%} if(data[1].length > 0 ){%>
-                        <b>Target's Job</b>
-                        <% _.each(data[1], function(v, i){%>
-                        <a href="/rate/view/<%- v.seq %>">
-                            <img src="<%- v.photo %>" />
-                            <span><%- v.nick_name %></span>
-                            <p>
-                                Job: <%-v.job %>
-                            </p>
-                        </a>
-                        <%})%>
-                        <hr />
-                        <%} if(data[2].length > 0){%>
-                        <b>Creator</b>
-                        <% _.each(data[2], function(v, i){%>
-                        <a>
-                            <img src="<%- v.photo %>" />
-                            <span><%- v.nick_name %></span>
-                        </a>
-                        <%})%>
-                        <hr />
-                        <%} if(data[3].length > 0){%>
-                        <b>Creator</b>
-                        <% _.each(data[3], function(v, i){%>
-                        <a href="/rate/view/<%- v.seq %>">
-                            <img src="<%- v.photo %>" />
-                            <span><%- v.nick_name %></span>
-                            <p>
-                                Job: <%-v.job %>
-                            </p>
-                        </a>
-                        <%})%>
-                        <hr />
-                        <%} if(data[4].length > 0){%>
-                        <b>Reply Comment</b>
-                        <% _.each(data[4], function(v, i){%>
-                        <a href="/rate/view/<%- v.seq %>">
-                            <img src="<%- v.photo %>" />
-                            <span><%- v.nick_name %></span>
-                            <p>
-                                <%- v.comment.substr(0, 80) %>
-                                <%- v.comment.length > 80 ? '...': ''%>
-                            </p>
-                        </a>
-                        <%})}%>
-                        <%}else{%>
+                        <div id="result-all" class="rate">
+                            <p style="font-size:100px; font-weight:bolder; color:#ccc; text-align: center">WWTL</p>
+                            <p style="color:#bbb; text-align: center">Search all!!</p>
+                        </div>
+                        <script type="text/template" id="tmpl-result-all">
+                            <%if(data.length> 0){%>
+                            <hr />
+                            <% if(data[0].length > 0 ){%>
+                            <b>Target</b>
+                            <% _.each(data[0], function(v, i){%>
+                            <a href="/rate/view/<%- v.seq %>">
+                                <img src="<%- v.photo %>" />
+                                <span><%- v.nick_name %></span>
+                                <p>
+                                    <%-v.name %>
+                                </p>
+                            </a>
+                            <%})%>
+                            <hr />
+                            <%} if(data[1].length > 0 ){%>
+                            <b>Target's Job</b>
+                            <% _.each(data[1], function(v, i){%>
+                            <a href="/rate/view/<%- v.seq %>">
+                                <img src="<%- v.photo %>" />
+                                <span><%- v.nick_name %></span>
+                                <p>
+                                    Job: <%-v.job %>
+                                </p>
+                            </a>
+                            <%})%>
+                            <hr />
+                            <%} if(data[2].length > 0){%>
+                            <b>Creator</b>
+                            <% _.each(data[2], function(v, i){%>
+                            <a>
+                                <img src="<%- v.photo %>" />
+                                <span><%- v.nick_name %></span>
+                            </a>
+                            <%})%>
+                            <hr />
+                            <%} if(data[3].length > 0){%>
+                            <b>Creator</b>
+                            <% _.each(data[3], function(v, i){%>
+                            <a href="/rate/view/<%- v.seq %>">
+                                <img src="<%- v.photo %>" />
+                                <span><%- v.nick_name %></span>
+                                <p>
+                                    Job: <%-v.job %>
+                                </p>
+                            </a>
+                            <%})%>
+                            <hr />
+                            <%} if(data[4].length > 0){%>
+                            <b>Reply Comment</b>
+                            <% _.each(data[4], function(v, i){%>
+                            <a href="/rate/view/<%- v.seq %>">
+                                <img src="<%- v.photo %>" />
+                                <span><%- v.nick_name %></span>
+                                <p>
+                                    <%- v.comment.substr(0, 80) %>
+                                    <%- v.comment.length > 80 ? '...': ''%>
+                                </p>
+                            </a>
+                            <%})}%>
+                            <%}else{%>
                             <p class="text-center">No data</p>
-                        <%}%>
-                    </script>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">Find someone.</div>
-                <div class="panel-body">
-                    <div class="search-detail">
-                        <div class="form-inline text-right condition">
-                            <select class="form-control" id="sel-condition">
-                                <option val="c-name">Name</option>
-                                <option val="c-featured">Rate featured</option>
-                                <option val="c-job">Job</option>
-                                <option val="c-birth">Year of Birth</option>
-                            </select>
-                            <input type="text" class="form-control val-condition c-name" />
-                            <input type="text" class="form-control val-condition c-job" />
-                            <select class="form-control val-condition c-featured">
-                                @foreach($ratetype as $data )
-                                    <option value="{{$data->rate_type}}">{{$data->name}}</option>
-                                @endforeach
-                            </select>
-                            <select class="form-control val-condition c-birth">
-                                @for($i=date('Y')+1; $i--; $i>1700)
-                                    <option>{{$i}}</option>
-                                @endfor
-                            </select>
-                        </div>
+                            <%}%>
+                        </script>
                     </div>
-                    <div class="text-right">
-                        <a id="btn-condi-add" class="btn btn-default btn-sm">Add condition</a>
-                        <a id="btn-condi-remove" class="btn btn-default btn-sm">Remove all</a>
-                        <a id="btn-condi-search" class="btn btn-default btn-sm" id="search-detail">Search</a>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Find someone.</div>
+                    <div class="panel-body">
+                        <div class="search-detail">
+                            <div class="form-inline text-right condition">
+                                <a class="condi-del"><i class="glyphicon glyphicon-remove"></i></a>
+                                <select class="form-control sel-condition">
+                                    <option value="c-name">Name</option>
+                                    <option value="c-featured">Rate featured</option>
+                                    <option value="c-job">Job</option>
+                                    <option value="c-birth">Year of Birth</option>
+                                </select>
+                                <input type="text" class="form-control val-condition c-name on" />
+                                <input type="text" class="form-control val-condition c-job" />
+                                <select class="form-control val-condition c-featured">
+                                    @foreach($ratetype as $data )
+                                        <option value="{{$data->rate_type}}">{{$data->name}}</option>
+                                    @endforeach
+                                </select>
+                                <select class="form-control val-condition c-birth">
+                                    @for($i=date('Y')+1; $i--; $i>1700)
+                                        <option>{{$i}}</option>
+                                    @endfor
+                                </select>
+                            </div>
+                        </div>
+                        <script type="text/template" id="tmpl-condition">
+                            <div class="form-inline text-right condition">
+                                <a class="condi-del"><i class="glyphicon glyphicon-remove"></i></a>
+                                <select class="form-control sel-condition">
+                                    <option value="c-name">Name</option>
+                                    <option value="c-featured">Rate featured</option>
+                                    <option value="c-job">Job</option>
+                                    <option value="c-birth">Year of Birth</option>
+                                </select>
+                                <input type="text" class="form-control val-condition c-name on" />
+                                <input type="text" class="form-control val-condition c-job" />
+                                <select class="form-control val-condition c-featured">
+                                    @foreach($ratetype as $data )
+                                        <option value="{{$data->rate_type}}">{{$data->name}}</option>
+                                    @endforeach
+                                </select>
+                                <select class="form-control val-condition c-birth">
+                                    @for($i=date('Y')+1; $i--; $i>1700)
+                                        <option>{{$i}}</option>
+                                    @endfor
+                                </select>
+                            </div>
+                        </script>
+                        <div class="text-right">
+                            <a id="btn-condi-add" class="btn btn-default btn-sm">Add condition</a>
+                            <a id="btn-condi-remove" class="btn btn-default btn-sm">Remove all</a>
+                            <a id="btn-condi-search" class="btn btn-default btn-sm" id="search-detail">Search</a>
+                        </div>
+                        <div id="result-detail" class="rate"></div>
+                        <script type="text/template" id="tmpl-result-detail">
+                            <%if(data.length> 0){%>
+                            <hr />
+                            <% _.each(data, function(v, i){%>
+                            <a href="/rate/view/<%- v.seq %>">
+                                <img src="<%- v.photo %>" />
+                                <span><%- v.nick_name %></span>
+                            </a>
+                            <hr />
+                            <%})}else{%>
+                            <p class="text-center">No data</p>
+                            <%}%>
+                        </script>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     @endif
 @endsection
 @section('scripts')

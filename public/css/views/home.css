@@ -183,14 +183,19 @@
 .search-detail .condition {
     margin-bottom: 10px
 }
+.search-detail .condi-del{
+    width:5%;
+    color:#999
+}
 .search-detail #sel-condition{
-    width:30%;
+    width:25%;
 }
 .search-detail .val-condition{
     width:65%;
+    margin:0px;
     display: none;
 }
-.search-detail .c-name.val-condition{
+.search-detail .val-condition.on{
     display: inline-block;
 }
 #show-pic {
