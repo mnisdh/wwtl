@@ -116,7 +116,7 @@
                             <a title="All rating score" class="btn btn-default btn-sm" id="chart-all"><i class="glyphicon glyphicon-align-left"></i></a>
                             <select id="sel-sort">
                                 <option value="hl">High to Low Score</option>
-                                <option value="lh">Low to Hieght Score</option>
+                                <option value="lh">Low to High Score</option>
                             </select>
                         </div>
                         <div id="chart"><canvas id="myChart" width="50" height="50"></canvas></div>

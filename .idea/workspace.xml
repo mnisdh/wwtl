@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="fb3ee1a2-62b5-481a-92f0-e043a3eb5afa" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/views/rate.view.js" afterPath="$PROJECT_DIR$/public/scripts/views/rate.view.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/rate/view.blade.php" afterPath="$PROJECT_DIR$/resources/views/rate/view.blade.php" />
     </list>
     <ignored path="wwtl.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,19 +36,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RateController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RateController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="170" column="36" selection-start-line="170" selection-start-column="36" selection-end-line="170" selection-end-column="36" />
-              <folding>
-                <element signature="e#39#46#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
@@ -86,8 +75,18 @@
       <file leaf-file-name="view.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/rate/view.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="134" selection-start-line="10" selection-start-column="134" selection-end-line="10" selection-end-column="134" />
+            <state relative-caret-position="-24">
+              <caret line="118" column="62" selection-start-line="118" selection-start-column="62" selection-end-line="118" selection-end-column="62" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rate.view.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/scripts/views/rate.view.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="120" column="25" selection-start-line="120" selection-start-column="25" selection-end-line="120" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -181,15 +180,15 @@
         <option value="$PROJECT_DIR$/public/scripts/views/auth.checkinfo.js" />
         <option value="$PROJECT_DIR$/public/scripts/views/rate.rate.js" />
         <option value="$PROJECT_DIR$/resources/views/rate/rate.blade.php" />
-        <option value="$PROJECT_DIR$/public/scripts/views/rate.view.js" />
         <option value="$PROJECT_DIR$/public/css/views/home.css" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/RateController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
         <option value="$PROJECT_DIR$/public/scripts/views/home.js" />
         <option value="$PROJECT_DIR$/resources/views/auth/mypage.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/rate/view.blade.php" />
         <option value="$PROJECT_DIR$/public/css/views/rate.view.css" />
         <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/rate/view.blade.php" />
+        <option value="$PROJECT_DIR$/public/scripts/views/rate.view.js" />
       </list>
     </option>
   </component>
@@ -580,14 +579,7 @@
       <workItem from="1466901251752" duration="29010000" />
       <workItem from="1470456574892" duration="473000" />
       <workItem from="1470457202706" duration="42161000" />
-      <workItem from="1470880169329" duration="22876000" />
-    </task>
-    <task id="LOCAL-00018" summary="oAuth Image">
-      <created>1470748697659</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1470748697659</updated>
+      <workItem from="1470880169329" duration="23132000" />
     </task>
     <task id="LOCAL-00019" summary="oAuth update">
       <created>1470749876071</created>
@@ -925,11 +917,18 @@
       <option name="project" value="LOCAL" />
       <updated>1471158983824</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="New changelist">
+      <created>1471159381055</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1471159381055</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96662000" />
+    <option name="totallyTimeSpent" value="96918000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1327,14 +1326,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/scripts/views/rate.view.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="84" column="34" selection-start-line="84" selection-start-column="34" selection-end-line="84" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RateController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
@@ -1387,14 +1378,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/rate/view.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="134" selection-start-line="10" selection-start-column="134" selection-end-line="10" selection-end-column="134" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/views/rate.view.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1422,6 +1405,22 @@
             <element signature="e#5885#5923#0#HTML" expanded="true" />
             <element signature="e#5996#9124#0#HTML" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/rate/view.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-24">
+          <caret line="118" column="62" selection-start-line="118" selection-start-column="62" selection-end-line="118" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/views/rate.view.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="120" column="25" selection-start-line="120" selection-start-column="25" selection-end-line="120" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>

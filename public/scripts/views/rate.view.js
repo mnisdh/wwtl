@@ -117,6 +117,9 @@ function dispAllChart(labels, datas){
             labels: labels,
             datasets: [{
                 data: datas,
+                backgroundColor: [
+                    '#999'
+                ],
                 borderWidth: 1
             }]
         },
