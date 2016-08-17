@@ -70,7 +70,6 @@ function initAutocomplete() {
     // fields in the form.
     autocomplete.addListener('place_changed', function(){
         var place = autocomplete.getPlace();
-        console.log(place)
         _.each(place.address_components, function (v, i) {
             if(v.types[0] == 'country')
                 $('#country').val(v.short_name)

@@ -5,18 +5,9 @@
 @section('main')
     <div class="row">
         <div class="col-md-7" id="target-board">
-            <div class="row" id="show-pic">
-                <?php $i = 0 ?>
-                @foreach(\App\Target::orderBy('dt_update', 'DESC')->groupBy('seq')->take(10)->get() as $data )
-                    <a href="/rate/view/{{$data->seq}}" class="target t{{$i++}} img-circle">
-                        <img src="{{$data->photo}}" />
-                        <div>{{$data->nick_name}}</div>
-                    </a>
-                @endforeach
-            </div>
             <div class="row" id="show-map">
-                <div class="col-md-3"><h3 style="width:200px;">Filter by location!!</h3></div>
-                <div class="col-md-9 text-right">
+                <div class="col-xs-9">
+                    <div id="map"></div>
                     <label class="checkbox-inline"><input id="chk-country" type="checkbox" />Search only in</label>
                     <select id="country" disabled>
                         @foreach($country as $data)
@@ -24,14 +15,22 @@
                         @endforeach
                     </select>
                 </div>
-                <div class="col-xs-12"><div id="map" style="{{$i==0?"":"none"}}"></div></div>
+                <div class="col-xs-3" id="search-board">
+                    <?php $i=1; ?>
+                    @foreach(\App\Target::orderBy('dt_update', 'DESC')->groupBy('seq')->take(10)->get() as $data )
+                        <a class="target" href="/rate/view/{{$data->seq}}">
+                            <span class="loc">{{$i++}}</span>
+                            <img class="img-rounded" src="{{$data->photo}}" />
+                            <span>{{$data->nick_name}}</span>
+                        </a>
+                    @endforeach
+                </div>
             </div>
-        </div>
-        <div class="col-md-7" id="search-board">
         </div>
         <script type="text/template" id="tmpl-search">
         <% _.each(data, function(v, i){%>
                 <a class="target" href="/rate/view/<%- v.seq %>">
+                    <span class="loc">1</span>
                     <img class="img-rounded" src="<%- v.photo %>" />
                     <span><%- v.nick_name %></span>
                 </a>

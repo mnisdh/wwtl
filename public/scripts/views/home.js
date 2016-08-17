@@ -94,8 +94,6 @@ function search(type) {
             type : type||''
         },
         success:function (res) {
-            $('#target-board').hide();
-            $('#search-board').show();
             var tmp = _.template($('#tmpl-search').html());
             $('#search-board').html(tmp({data: res}));
         }
@@ -144,13 +142,30 @@ function initMap() {
                 zoom: 6
             });
             $.ajax({
-                url:'',
-                
+                type:'post',
+                url:'/rate/searchmap',
+                data: {
+                    country: loc.country_code
+                },
+                success: function (res) {
+                    _.each(res, function (v, i) {
+                        var marker = new google.maps.Marker ({
+                            icon: {
+                                url:'/img/loc.png'
+                            },
+                            position: {lat: parseFloat(v.lat), lng: parseFloat(v.lng)},
+                            title: v.nick_name,
+                            label: (i+1).toString()});
+
+                        var infowindow = new google.maps.InfoWindow({
+                            content: '<a href="/rate/view/'+v.seq+'"><img style="border:1px solid #999; margin-right:5px;width:25px; height:25px;" src="'+v.photo+'" />'+v.nick_name+'</a>'
+                        });
+                        google.maps.event.addListener(marker,'click',function(){
+                            infowindow.open(map,marker);
+                        });
+                        marker.setMap(map);
+                    })
+                }
             })
-            var marker = new google.maps.Marker({
-                position: myLatLng,
-                map: map,
-                title: 'Hello World!'
-            });
         });
 }

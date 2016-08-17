@@ -174,6 +174,12 @@ class RateController extends Controller
         });
         return $target->groupBy('seq')->get();
     }
+
+    public function postSearchmap(){
+        $target = DB::table('target')->where('country', $_POST['country'])->get();
+        return $target;
+    }
+
     public function getReply($id) {
         $reply = DB::table('reply')
             ->select('reply.id', 'user.photo','user.seq', 'user.nick_name', 'reply.comment', 'reply.update_dt')
