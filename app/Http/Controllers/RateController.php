@@ -99,6 +99,7 @@ class RateController extends Controller
         $target->job = $_POST['job'];
         $target->locale = $_POST['locale'];
         $target->locale_cd = $_POST['locale_cd'];
+        $target->country = $_POST['country'];
         $target->lat = $_POST['lat'];
         $target->lng = $_POST['lng'];
         $target->save();
