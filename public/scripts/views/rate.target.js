@@ -37,7 +37,9 @@ function  initEvent() {
                     job: $('#job').val(),
                     photo: $('#photo').val(),
                     locale: $('#locale').val(),
-                    locale_cd: $('#locale_cd').val()
+                    locale_cd: $('#locale_cd').val(),
+                    lat: $('#lat').val(),
+                    lng: $('#lng').val()
                 },
                 success: function (res) {
                     if($('#seq').val() == -1){
@@ -68,5 +70,7 @@ function initAutocomplete() {
     autocomplete.addListener('place_changed', function(){
         var place = autocomplete.getPlace();
         $('#locale_cd').val(place.place_id)
+        $('#lat').val(place.geometry.location.lat())
+        $('#lng').val(place.geometry.location.lng())
     });
 }

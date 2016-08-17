@@ -7,12 +7,13 @@ use App\Http\Requests;
 class RateController extends Controller
 {
     public function getTarget($id){
-        if(\Auth::guest()){
-            return redirect('/login');
-        }
-        else{
-            return view('/rate/target', ['seq' => $id]);
-        }
+//        if(\Auth::guest()){
+//            return redirect('/login');
+//        }
+//        else{
+//            return view('/rate/target', ['seq' => $id]);
+//        }
+        return view('/rate/target', ['seq' => $id]);
     }
     public function getRate($id){
         if(\Auth::guest()){
@@ -98,6 +99,8 @@ class RateController extends Controller
         $target->job = $_POST['job'];
         $target->locale = $_POST['locale'];
         $target->locale_cd = $_POST['locale_cd'];
+        $target->lat = $_POST['lat'];
+        $target->lng = $_POST['lng'];
         $target->save();
 
         return $target->seq;
