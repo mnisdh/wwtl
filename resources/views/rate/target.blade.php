@@ -74,6 +74,7 @@
                             <label>State, Country*</label>
                             <input type="text"  value="{{$seq == -1 ? '' : \App\Target::find($seq)->locale}}" id="locale" name="locale" class="form-control" />
                             <input type="hidden" id="locale_cd" name="locale_cd" value="{{$seq == -1 ? '' : \App\Target::find($seq)->locale_cd}}" />
+                            <input type="hidden" id="country" name="country" value="{{$seq == -1 ? '' : \App\Target::find($seq)->country}}" />
                             <input type="hidden" id="lat" name="lat" value="{{$seq == -1 ? '' : \App\Target::find($seq)->lat}}" />
                             <input type="hidden" id="lng" name="lng" value="{{$seq == -1 ? '' : \App\Target::find($seq)->lng}}" />
                         </li>

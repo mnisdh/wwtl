@@ -36,6 +36,7 @@ function  initEvent() {
                     gender: $('#gender .active input').val(),
                     job: $('#job').val(),
                     photo: $('#photo').val(),
+                    country: $('#country').val(),
                     locale: $('#locale').val(),
                     locale_cd: $('#locale_cd').val(),
                     lat: $('#lat').val(),
@@ -69,6 +70,11 @@ function initAutocomplete() {
     // fields in the form.
     autocomplete.addListener('place_changed', function(){
         var place = autocomplete.getPlace();
+        console.log(place)
+        _.each(place.address_components, function (v, i) {
+            if(v.types[0] == 'country')
+                $('#country').val(v.short_name)
+        })
         $('#locale_cd').val(place.place_id)
         $('#lat').val(place.geometry.location.lat())
         $('#lng').val(place.geometry.location.lng())

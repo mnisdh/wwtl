@@ -143,5 +143,14 @@ function initMap() {
                 center: {lat: loc.latitude, lng: loc.longitude},
                 zoom: 6
             });
+            $.ajax({
+                url:'',
+                
+            })
+            var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                title: 'Hello World!'
+            });
         });
 }
