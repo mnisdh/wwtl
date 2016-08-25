@@ -5,16 +5,30 @@ $(document).ready(function () {
 
 var map;
 function init(){
-   
 }
 function initEvent(){
     $('#chk-country').on('change',function () {
         if($(this).is(":checked")){
-            $('#country').removeAttr('disabled')
+            $('#country').removeAttr('disabled');
+            $('#locale').val('');
+            alat = null;
         }
         else{
             $('#country').attr('disabled', true)
         }
+    })
+
+    $('#country').on('change', function () {
+        var geocoder = new google.maps.Geocoder();
+        var location = $(this).val();
+        geocoder.geocode( { 'address': location }, function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                map.setCenter(results[0].geometry.location);
+            } else {
+                alert("Could not find location: " + location);
+            }
+        });
+        search();
     })
 
     $('.featured').on('change', function () {
@@ -85,17 +99,53 @@ function initEvent(){
     })
 }
 
+var marker = [];
 function search(type) {
+    console.log(alat)
     $.ajax({
         type: 'post',
         url:'/rate/search',
         data: {
             query1 : '%'+$('#target').val()+'%',
+            query2 : $('#chk-country').is(":checked") || alat != null ? $('#country').val() : '',
             type : type||''
         },
         success:function (res) {
             var tmp = _.template($('#tmpl-search').html());
             $('#search-board').html(tmp({data: res}));
+            if(marker.length > 0)
+            {
+                _.each(marker, function (v, i) {
+                    marker[i].setMap(null);
+                })
+                marker = [];
+            }
+            if(alat != null)
+            {
+                map = new google.maps.Map(document.getElementById('map'), {
+                    center: {lat: alat, lng: alng},
+                    zoom: 6
+                });
+            }
+            _.each(res, function (v, i) {
+                marker[i] = new google.maps.Marker ({
+                    icon: {
+                        url:'/img/loc.png'
+                    },
+                    position: {lat: parseFloat(v.lat), lng: parseFloat(v.lng)},
+                    title: v.nick_name,
+                    label: (i+1).toString()});
+
+                var infowindow = new google.maps.InfoWindow({
+                    content: '<a href="/rate/view/'+v.seq+'"><img style="border:1px solid #999; margin-right:5px;width:25px; height:25px;" src="'+v.photo+'" />'+v.nick_name+'</a>'
+                });
+                google.maps.event.addListener(marker,'click',function(){
+                    infowindow.open(map,marker);
+                });
+                marker[i].setMap(map);
+            })
+
+
         }
     })
 }
@@ -132,6 +182,34 @@ function search_detail() {
 }
 
 
+var autocomplete;
+var alat, alng;
+function initAutocomplete() {
+    // Create the autocomplete object, restricting the search to geographical
+    // location types.
+    autocomplete = new google.maps.places.Autocomplete(
+        /** @type {!HTMLInputElement} */(document.getElementById('locale')),
+        {types: ['geocode']});
+
+    // When the user selects an address from the dropdown, populate the address
+    // fields in the form.
+    autocomplete.addListener('place_changed', function(){
+        $('#country').attr('disabled', true)
+        $("#country").prop("checked", false);
+
+        var place = autocomplete.getPlace();
+        _.each(place.address_components, function (v, i) {
+            if(v.types[0] == 'country')
+                $('#country').val(v.short_name)
+        })
+
+        alat = place.geometry.location.lat();
+        alng = place.geometry.location.lng();
+    });
+}
+
+
+
 function initMap() {
     $.getJSON('https://geoip-db.com/json/geoip.php?jsonp=?')
         .done(function (location) {
@@ -141,31 +219,10 @@ function initMap() {
                 center: {lat: loc.latitude, lng: loc.longitude},
                 zoom: 6
             });
-            $.ajax({
-                type:'post',
-                url:'/rate/searchmap',
-                data: {
-                    country: loc.country_code
-                },
-                success: function (res) {
-                    _.each(res, function (v, i) {
-                        var marker = new google.maps.Marker ({
-                            icon: {
-                                url:'/img/loc.png'
-                            },
-                            position: {lat: parseFloat(v.lat), lng: parseFloat(v.lng)},
-                            title: v.nick_name,
-                            label: (i+1).toString()});
 
-                        var infowindow = new google.maps.InfoWindow({
-                            content: '<a href="/rate/view/'+v.seq+'"><img style="border:1px solid #999; margin-right:5px;width:25px; height:25px;" src="'+v.photo+'" />'+v.nick_name+'</a>'
-                        });
-                        google.maps.event.addListener(marker,'click',function(){
-                            infowindow.open(map,marker);
-                        });
-                        marker.setMap(map);
-                    })
-                }
-            })
+            initAutocomplete();
+
+
+            search();
         });
 }

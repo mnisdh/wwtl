@@ -120,6 +120,15 @@ class RateController extends Controller
                 }
             }
         }
+        
+        if($_POST['query2'] != '')
+        {
+            $data = $data->where(function($query){
+                return $query->Where('country', 'like', $_POST['query2']);
+            });
+        }
+
+        
         $data = $data->where(function($query){
                     return $query->Where('first_name', 'like', $_POST['query1'])
                         ->orWhere('last_name', 'like', $_POST['query1'])

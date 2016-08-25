@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb3ee1a2-62b5-481a-92f0-e043a3eb5afa" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/loc.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/RateController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/RateController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/views/home.css" afterPath="$PROJECT_DIR$/public/css/views/home.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/views/home.js" afterPath="$PROJECT_DIR$/public/scripts/views/home.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/scripts/views/rate.target.js" afterPath="$PROJECT_DIR$/public/scripts/views/rate.target.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" />
     </list>
     <ignored path="wwtl.iws" />
@@ -30,11 +27,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="checkinfo.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/auth/checkinfo.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="573">
+              <caret line="92" column="33" selection-start-line="91" selection-start-column="4" selection-end-line="92" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="auth.checkinfo.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/scripts/views/auth.checkinfo.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1245">
+              <caret line="94" column="25" selection-start-line="94" selection-start-column="9" selection-end-line="94" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="RateController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RateController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="177" column="33" selection-start-line="177" selection-start-column="20" selection-end-line="177" selection-end-column="33" />
+            <state relative-caret-position="-942">
+              <caret line="126" column="55" selection-start-line="126" selection-start-column="55" selection-end-line="126" selection-end-column="55" />
               <folding>
                 <element signature="e#39#46#0#PHP" expanded="true" />
               </folding>
@@ -45,12 +62,12 @@
       <file leaf-file-name="home.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="93">
-              <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+            <state relative-caret-position="264">
+              <caret line="247" column="14" selection-start-line="247" selection-start-column="14" selection-end-line="247" selection-end-column="14" />
               <folding>
-                <element signature="e#3964#3987#0#HTML" expanded="true" />
-                <element signature="e#5932#6007#0#HTML" expanded="true" />
-                <element signature="e#6048#6086#0#HTML" expanded="true" />
+                <element signature="e#3455#3478#0#HTML" expanded="true" />
+                <element signature="e#5423#5498#0#HTML" expanded="true" />
+                <element signature="e#5539#5577#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -59,21 +76,11 @@
       <file leaf-file-name="home.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/scripts/views/home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="160" column="104" selection-start-line="160" selection-start-column="104" selection-end-line="160" selection-end-column="104" />
+            <state relative-caret-position="270">
+              <caret line="123" column="13" selection-start-line="123" selection-start-column="13" selection-end-line="123" selection-end-column="13" />
               <folding>
-                <marker date="1471430980000" expanded="true" signature="4994:5058" ph="..." />
+                <marker date="1472135363000" expanded="true" signature="4479:4543" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/views/home.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="31" column="14" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -81,18 +88,8 @@
       <file leaf-file-name="rate.target.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/scripts/views/rate.target.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="492">
-              <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="target.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/rate/target.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="76" column="136" selection-start-line="76" selection-start-column="136" selection-end-line="76" selection-end-column="136" />
+            <state relative-caret-position="552">
+              <caret line="76" column="43" selection-start-line="76" selection-start-column="43" selection-end-line="78" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -150,9 +147,9 @@
         <option value="$PROJECT_DIR$/app/Target.php" />
         <option value="$PROJECT_DIR$/resources/views/rate/target.blade.php" />
         <option value="$PROJECT_DIR$/public/scripts/views/rate.target.js" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/RateController.php" />
         <option value="$PROJECT_DIR$/public/css/views/home.css" />
         <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/RateController.php" />
         <option value="$PROJECT_DIR$/public/scripts/views/home.js" />
       </list>
     </option>
@@ -366,6 +363,28 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wwtl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wwtl" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="img" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -562,14 +581,7 @@
       <workItem from="1466901251752" duration="29010000" />
       <workItem from="1470456574892" duration="473000" />
       <workItem from="1470457202706" duration="42161000" />
-      <workItem from="1470880169329" duration="31980000" />
-    </task>
-    <task id="LOCAL-00027" summary="add google map">
-      <created>1470756737694</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1470756737694</updated>
+      <workItem from="1470880169329" duration="38379000" />
     </task>
     <task id="LOCAL-00028" summary="add google map">
       <created>1470830514178</created>
@@ -907,11 +919,18 @@
       <option name="project" value="LOCAL" />
       <updated>1471404177170</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="New changelist">
+      <created>1471438255287</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1471438255287</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105766000" />
+    <option name="totallyTimeSpent" value="112165000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1120,14 +1139,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/scripts/views/auth.mypage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/views/auth.login.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -1173,22 +1184,6 @@
           <folding>
             <element signature="e#45#58#0#PHP" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/auth/checkinfo.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scripts/views/auth.checkinfo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1352,28 +1347,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RateController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="177" column="33" selection-start-line="177" selection-start-column="20" selection-end-line="177" selection-end-column="33" />
-          <folding>
-            <element signature="e#39#46#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/rate/target.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="387">
           <caret line="76" column="136" selection-start-line="76" selection-start-column="136" selection-end-line="76" selection-end-column="136" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/scripts/views/rate.target.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="72" column="0" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1386,24 +1363,66 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/views/auth.mypage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/views/rate.target.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="76" column="43" selection-start-line="76" selection-start-column="43" selection-end-line="78" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/scripts/views/auth.checkinfo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1245">
+          <caret line="94" column="25" selection-start-line="94" selection-start-column="9" selection-end-line="94" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/checkinfo.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="573">
+          <caret line="92" column="33" selection-start-line="91" selection-start-column="4" selection-end-line="92" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+        <state relative-caret-position="264">
+          <caret line="247" column="14" selection-start-line="247" selection-start-column="14" selection-end-line="247" selection-end-column="14" />
           <folding>
-            <element signature="e#3964#3987#0#HTML" expanded="true" />
-            <element signature="e#5932#6007#0#HTML" expanded="true" />
-            <element signature="e#6048#6086#0#HTML" expanded="true" />
+            <element signature="e#3455#3478#0#HTML" expanded="true" />
+            <element signature="e#5423#5498#0#HTML" expanded="true" />
+            <element signature="e#5539#5577#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RateController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-942">
+          <caret line="126" column="55" selection-start-line="126" selection-start-column="55" selection-end-line="126" selection-end-column="55" />
+          <folding>
+            <element signature="e#39#46#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/scripts/views/home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="160" column="104" selection-start-line="160" selection-start-column="104" selection-end-line="160" selection-end-column="104" />
+        <state relative-caret-position="270">
+          <caret line="123" column="13" selection-start-line="123" selection-start-column="13" selection-end-line="123" selection-end-column="13" />
           <folding>
-            <marker date="1471430980000" expanded="true" signature="4994:5058" ph="..." />
+            <marker date="1472135363000" expanded="true" signature="4479:4543" ph="..." />
           </folding>
         </state>
       </provider>

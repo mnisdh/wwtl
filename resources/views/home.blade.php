@@ -15,22 +15,13 @@
                         @endforeach
                     </select>
                 </div>
-                <div class="col-xs-3" id="search-board">
-                    <?php $i=1; ?>
-                    @foreach(\App\Target::orderBy('dt_update', 'DESC')->groupBy('seq')->take(10)->get() as $data )
-                        <a class="target" href="/rate/view/{{$data->seq}}">
-                            <span class="loc">{{$i++}}</span>
-                            <img class="img-rounded" src="{{$data->photo}}" />
-                            <span>{{$data->nick_name}}</span>
-                        </a>
-                    @endforeach
-                </div>
+                <div class="col-xs-3" id="search-board"></div>
             </div>
         </div>
         <script type="text/template" id="tmpl-search">
         <% _.each(data, function(v, i){%>
                 <a class="target" href="/rate/view/<%- v.seq %>">
-                    <span class="loc">1</span>
+                    <span class="loc"><%- i+1 %></span>
                     <img class="img-rounded" src="<%- v.photo %>" />
                     <span><%- v.nick_name %></span>
                 </a>
@@ -50,8 +41,8 @@
                 </div>
                 <div class="col-xs-12 txt">
                     <i class="glyphicon glyphicon glyphicon-map-marker"></i>
-                    <input type="text" id="autocomplete" placeholder="city or state" autocomplete="off">
-                    <input type="hidden" id="state_cd">
+                    <input type="text" id="locale" placeholder="city or state" />
+                    <input type="hidden" id="locale_cd" value="" />
                 </div>
                 <div class="col-xs-12">
                     <a id="search" class="btn btn-success btn-lg"><i class="glyphicon glyphicon-search"></i> Find Person</a>
@@ -260,8 +251,9 @@
 @section('scripts')
     <script src="/scripts/views/home.js"></script>
     <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5cttHt1JC55QdJH7Ki41zIOXIF0I5lR8&callback=initMap">
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5cttHt1JC55QdJH7Ki41zIOXIF0I5lR8&signed_in=true&libraries=places&callback=initMap">
     </script>
+
     @if($authCheck != '')
     <script>
         modal({
