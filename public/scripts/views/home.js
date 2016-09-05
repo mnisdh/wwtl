@@ -5,6 +5,7 @@ $(document).ready(function () {
 
 var map;
 function init(){
+
 }
 function initEvent(){
     $('#chk-country').on('change',function () {
@@ -101,7 +102,6 @@ function initEvent(){
 
 var marker = [];
 function search(type) {
-    console.log(alat)
     $.ajax({
         type: 'post',
         url:'/rate/search',
@@ -205,6 +205,7 @@ function initAutocomplete() {
 
         alat = place.geometry.location.lat();
         alng = place.geometry.location.lng();
+        search();
     });
 }
 
@@ -221,8 +222,6 @@ function initMap() {
             });
 
             initAutocomplete();
-
-
             search();
         });
 }
