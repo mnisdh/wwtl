@@ -14,7 +14,7 @@
     <!-- Styles -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/jquery.modal.css" type="text/css" rel="stylesheet" />
-    <link href="/css/common.css" rel="stylesheet">
+    <link href="/css/common.css?20160907" rel="stylesheet">
     @yield('css')
 </head>
 <body id="app-layout">

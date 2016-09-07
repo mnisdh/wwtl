@@ -14,8 +14,12 @@ body {
 .navbar-default .navbar-nav>li>a{
     color:#fff;
 }
+.navbar-default .navbar-nav>li>a:hover{
+    color:#FFFF00;
+}
 .panel{
     border-radius:0px;
+    box-shadow: 2px 2px 1px #000;
 }
 .panel-default>.panel-heading{
     background-color: #000;

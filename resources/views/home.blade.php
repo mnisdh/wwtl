@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('css')
-    <link href="/css/views/home.css" rel="stylesheet">
+    <link href="/css/views/home.css?20160907" rel="stylesheet">
 @endsection
 @section('main')
     <div class="row">

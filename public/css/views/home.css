@@ -87,9 +87,8 @@
     margin:7px 5px 3px 3px
 }
 #main #search-board .target:hover{
-    border: 1px solid #999;
-    box-shadow: 5px 5px 19px #000;
     text-decoration: none;
+    color:#FFFF00;
 }
 .rate a{
     display: block;
