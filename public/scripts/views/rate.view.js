@@ -116,16 +116,25 @@ function dispAllChart(labels, datas){
         data: {
             labels: labels,
             datasets: [{
+                min:0,
+                max:10,
                 data: datas,
-                backgroundColor: [
-                    '#999'
-                ],
+                backgroundColor : '#1986BB',
                 borderWidth: 1
             }]
         },
         options:{
             legend: {
                 display: false
+            },
+            scales: {
+                xAxes: [{
+                    ticks: {
+                        min: 0,
+                        max:10,
+                        beginAtZero: true
+                    }
+                }]
             }
         }
     });
@@ -144,11 +153,11 @@ function dispChart(labels, datas){
                 //data: [12, 19, 3, 5, 2, 3],
                 data: datas,
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)'
+                    'rgba(255, 99, 132, 0.5)',
+                    'rgba(54, 162, 235, 0.5)',
+                    'rgba(255, 206, 86, 0.5)',
+                    'rgba(75, 192, 192, 0.5)',
+                    'rgba(153, 102, 255, 0.5)'
                     //'rgba(255, 159, 64, 0.2)'
                 ],
                 borderColor: [

@@ -70,6 +70,7 @@
 
     <div class="container">
         <div id="main" class="row">
+            <div class="background"></div>
             <div class="col-md-12">@yield('main')</div>
         </div>
         <div class="row">
