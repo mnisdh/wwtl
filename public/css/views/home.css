@@ -1,5 +1,6 @@
 #main{
     margin-top:-35px;
+    position:relative;
 }
 #main .search .txt i {
     color: #aaa;
@@ -73,7 +74,7 @@
     width:100%;
 }
 #main #search-board .target .loc{
-    background-color: #5CB85C;
+    background-color: #F76055;
     display: inline-block;
     height: 20px;
     line-height:20px;
@@ -88,7 +89,7 @@
 }
 #main #search-board .target:hover{
     text-decoration: none;
-    color:#FFFF00;
+    color:#ffff00;
 }
 .rate a{
     display: block;

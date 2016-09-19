@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('css')
-    <link href="/css/views/home.css?20160907" rel="stylesheet">
+    <link href="/css/views/home.css?20130919" rel="stylesheet">
 @endsection
 @section('main')
     <div class="row">
@@ -249,7 +249,7 @@
     @endif
 @endsection
 @section('scripts')
-    <script src="/scripts/views/home.js"></script>
+    <script src="/scripts/views/home.js?20160919"></script>
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5cttHt1JC55QdJH7Ki41zIOXIF0I5lR8&signed_in=true&libraries=places&callback=initMap">
     </script>

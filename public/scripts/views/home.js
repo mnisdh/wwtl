@@ -129,9 +129,9 @@ function search(type) {
             }
             _.each(res, function (v, i) {
                 marker[i] = new google.maps.Marker ({
-                    icon: {
-                        url:'/img/loc.png'
-                    },
+                    // icon: {
+                    //     url:'/img/loc.png'
+                    // },
                     position: {lat: parseFloat(v.lat), lng: parseFloat(v.lng)},
                     title: v.nick_name,
                     label: (i+1).toString()});
@@ -216,12 +216,12 @@ function initMap() {
         .done(function (location) {
             var loc = location;
             $('#country').val(loc.country_code)
-            map = new google.maps.Map(document.getElementById('map'), {
-                center: {lat: loc.latitude, lng: loc.longitude},
-                zoom: 6
-            });
-
-            initAutocomplete();
-            search();
         });
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 50, lng: 0},
+        zoom: 1
+    });
+
+    initAutocomplete();
+    search();
 }
