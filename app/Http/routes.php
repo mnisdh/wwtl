@@ -16,6 +16,7 @@ Route::auth();
 
 Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
+Route::get('/home_', 'HomeController@index');
 
 Route::post('passwordmail', 'Auth\PasswordController@sendMail');
 Route::post('authmail', 'Auth\AuthController@sendMail');
