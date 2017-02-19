@@ -5,39 +5,31 @@ $(document).ready(function () {
 
 var map;
 function init(){
-    if(location.href.indexOf('find')>0){
-        $(window).scrollTop(600)
-        $('#target').focus();
-    }
+
 }
 function initEvent(){
-    $('#country li').on('click', function () {
-        var geocoder = new google.maps.Geocoder();
-        var location = $(this).data('val');
-        $('#sel-country').html($(this).text())
-        $('#sel-country').data('val', location)
-        if(location == ''){
-            map.setCenter(new google.maps.LatLng(50, 0));
-            map.setZoom(2);
-        } else {
-            geocoder.geocode( { 'address': location }, function(results, status) {
-                if (status == google.maps.GeocoderStatus.OK) {
-                    map.setCenter(results[0].geometry.location);
-                    map.setZoom(6);
-                } else {
-                    alert("Could not find location: " + location);
-                }
-            });
+    $('#chk-country').on('change',function () {
+        if($(this).is(":checked")){
+            $('#country').removeAttr('disabled');
+            $('#locale').val('');
+            alat = null;
         }
-        search();
+        else{
+            $('#country').attr('disabled', true)
+        }
     })
-    
-    $('#search-typ li').on('click', function () {
-        $('#sel-search-typ').data('val', $(this).data('val'));
-        $('#sel-search-typ').html($(this).text())
-        if($(this).data('val') == 'all'){
-            search();
-        }
+
+    $('#country').on('change', function () {
+        var geocoder = new google.maps.Geocoder();
+        var location = $(this).val();
+        geocoder.geocode( { 'address': location }, function(results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                map.setCenter(results[0].geometry.location);
+            } else {
+                alert("Could not find location: " + location);
+            }
+        });
+        search();
     })
 
     $('.featured').on('change', function () {
@@ -60,7 +52,7 @@ function initEvent(){
     })
 
     // search
-    $('#btn-search').on('click', function () {
+    $('#search').on('click', function () {
         search();
     })
     $('#target').on('keyup', function (e) {
@@ -106,94 +98,21 @@ function initEvent(){
     $('#btn-condi-search').on('click', function () {
         search_detail();
     })
-
-    $('.res-type a').on('click', function () {
-       if(!$(this).hasClass('on')){
-            $('.res-type a.on').removeClass('on');
-            $(this).addClass('on')
-
-            search()
-        }
-    })
 }
 
 var marker = [];
-var autocomplete;
-var alat, alng;
-
-// function search(type) {
-//     $.ajax({
-//         type: 'post',
-//         url:'/rate/search',
-//         data: {
-//             query1 : '%'+$('#target').val()+'%',
-//             query2 : alat != null ? $('#sel-country').data('val') : '',
-//             type : type||''
-//         },
-//         success:function (res) {
-//             console.log(res)
-//             var tmp = _.template($('#tmpl-search').html());
-//             $('#search-board').html(tmp({data: res}));
-//             if(marker.length > 0)
-//             {
-//                 _.each(marker, function (v, i) {
-//                     marker[i].setMap(null);
-//                 })
-//                 marker = [];
-//             }
-//
-//             if(alat != null)
-//             {
-//                 map = new google.maps.Map(document.getElementById('map'), {
-//                     center: {lat: alat, lng: alng},
-//                     zoom: 6
-//                 });
-//             }
-//             _.each(res, function (v, i) {
-//                 marker[i] = new google.maps.Marker ({
-//                     icon: v.photo,
-//                     animation: google.maps.Animation.DROP,
-//                     map: map,
-//                     position: {lat: parseFloat(v.lat), lng: parseFloat(v.lng)},
-//                     title: v.nick_name,
-//                     optimized:false });
-//
-//                 var infowindow = new google.maps.InfoWindow({
-//                     content: '<a href="/rate/view/'+v.seq+'"><img style="border:1px solid #999; margin-right:5px;width:25px; height:25px;" src="'+v.photo+'" />'+v.nick_name+'</a>'
-//                 });
-//                 google.maps.event.addListener(marker,'click',function(){
-//                     infowindow.open(map,marker);
-//                 });
-//                 //marker[i].setMap(map);
-//             })
-//             var myoverlay = new google.maps.OverlayView();
-//             myoverlay.draw = function () {
-//                 this.getPanes().markerLayer.id='markerLayer';
-//             };
-//             myoverlay.setMap(map);
-//
-//         }
-//     })
-// }
-
-function search() {
+function search(type) {
     $.ajax({
         type: 'post',
         url:'/rate/search',
         data: {
-            typ : $('#sel-search-typ').data('val'),
-            country: $('#sel-country').data('val'),
-            val: $('#target').val(),
-            res: $('.res-type a.on').data('val')
+            query1 : '%'+$('#target').val()+'%',
+            query2 : $('#chk-country').is(":checked") || alat != null ? $('#country').val() : '',
+            type : type||''
         },
         success:function (res) {
-
-            var target = _.groupBy(res, function (v) {
-                return v.seq;
-            })
-
             var tmp = _.template($('#tmpl-search').html());
-            $('#search-board').html(tmp({data: target, res: $('.res-type a.on').data('val')}));
+            $('#search-board').html(tmp({data: res}));
             if(marker.length > 0)
             {
                 _.each(marker, function (v, i) {
@@ -201,7 +120,6 @@ function search() {
                 })
                 marker = [];
             }
-
             if(alat != null)
             {
                 map = new google.maps.Map(document.getElementById('map'), {
@@ -211,12 +129,12 @@ function search() {
             }
             _.each(res, function (v, i) {
                 marker[i] = new google.maps.Marker ({
-                    icon: v.photo,
-                    animation: google.maps.Animation.DROP,
-                    map: map,
+                    // icon: {
+                    //     url:'/img/loc.png'
+                    // },
                     position: {lat: parseFloat(v.lat), lng: parseFloat(v.lng)},
                     title: v.nick_name,
-                    optimized:false });
+                    label: (i+1).toString()});
 
                 var infowindow = new google.maps.InfoWindow({
                     content: '<a href="/rate/view/'+v.seq+'"><img style="border:1px solid #999; margin-right:5px;width:25px; height:25px;" src="'+v.photo+'" />'+v.nick_name+'</a>'
@@ -224,13 +142,9 @@ function search() {
                 google.maps.event.addListener(marker,'click',function(){
                     infowindow.open(map,marker);
                 });
-                //marker[i].setMap(map);
+                marker[i].setMap(map);
             })
-            var myoverlay = new google.maps.OverlayView();
-            myoverlay.draw = function () {
-                this.getPanes().markerLayer.id='markerLayer';
-            };
-            myoverlay.setMap(map);
+
 
         }
     })
@@ -244,7 +158,6 @@ function search_all(){
             val : $('#val-all').val()
         },
         success: function (res) {
-            console.log(res)
             var tmp = _.template($('#tmpl-result-all').html());
             $('#result-all').html(tmp({data: res}))
         }
@@ -269,6 +182,8 @@ function search_detail() {
 }
 
 
+var autocomplete;
+var alat, alng;
 function initAutocomplete() {
     // Create the autocomplete object, restricting the search to geographical
     // location types.
@@ -297,18 +212,16 @@ function initAutocomplete() {
 
 
 function initMap() {
-    $.getJSON('https://geoip-db.com/json/geoip.php?jsonp=?').done(function (location) {
-        var loc = location;
-
-        map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: loc.latitude, lng: loc.longitude},
-            zoom: 6
+    $.getJSON('https://geoip-db.com/json/geoip.php?jsonp=?')
+        .done(function (location) {
+            var loc = location;
+            $('#country').val(loc.country_code)
         });
-
-        $('#sel-country').data('val', loc.country_code)
-        $('#sel-country').html(loc.country_name)
-
-        search();
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 50, lng: 0},
+        zoom: 1
     });
-    //initAutocomplete();
+
+    initAutocomplete();
+    search();
 }

@@ -1,0 +1,20 @@
+
+.intro .step {
+    display: none;
+    margin-bottom: 20px;
+    min-height:150px;
+}
+.intro .step.on{
+    display: block;
+}
+.intro .btn{
+    min-width:70px
+}
+
+.Cropbox.step{
+    height:450px;
+}
+
+.slider{
+    width:100% !important;
+}

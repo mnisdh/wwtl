@@ -1,0 +1,46 @@
+.container{
+    max-width: 1000px;
+}
+.btn {
+    border-radius: 0px;
+}
+.clear {
+    clear: both;
+}
+#markerLayer img {
+    border: 2px solid #154341 !important;
+    border-radius: 50px;
+    box-shadow: 2px 2px 2px 0px #666;
+    width:50px !important;
+    height:50px !important;
+    background-color:#fff !important;
+    top:145px !important;
+    left:70px !important;
+}
+/* header Start */
+.navbar-default .navbar-brand{
+    font-weight: bolder;
+    color:#184C4A
+}
+.jumbotron {
+    background-color:#184C4A;
+    text-align: center;
+}
+.jumbotron p.tit-main{
+    margin-top:50px;
+    font-size:120px;
+    font-weight: bolder;
+    color:#fff;
+}
+.jumbotron p.tit-sub{
+    margin-top:15px;
+    font-size:20px;
+    color:#fff;
+}
+.jumbotron .btn{
+    margin:5px
+}
+.jumbotron b{
+    display: block;
+}
+/* header End*/

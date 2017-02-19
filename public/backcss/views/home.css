@@ -1,0 +1,161 @@
+#main{
+    margin-top:-35px;
+    position:relative;
+}
+#main .search .txt i {
+    color: #aaa;
+    position: absolute;
+    font-size: 15px;
+    top: 18px;
+    left: 30px;
+}
+#main .search input {
+    margin: 0px;
+    border: none;
+    height: 48px;
+    padding-left: 40px;
+    border-top: 1px #23527C solid;
+    width: 100%;
+}
+#main .search #search, #main .search #rate {
+    margin: 0px 0px 10px 0px;
+    font-weight: bold;
+    border-radius: 0px;
+    width: 50%;
+    float: left;
+}
+#main select {
+    margin:0px 0px 10px 0px;
+}
+#main #list-featured {
+    height:90px;
+}
+#main #list-featured a {
+    color:#fff;
+    margin:10px 10px 0px;
+    text-decoration: none;
+    cursor: pointer;
+}
+#main #list-featured a:hover i {
+    color:#D9534F;
+}
+#main #list-featured i {
+    font-size:9px;
+}
+#main .background {
+    background-color: #000;
+    opacity: 0.5;
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height:450px;
+}
+#main #target-board,#main .search>.row{
+    position: relative;
+    padding-top:30px;
+    height:400px;
+}
+
+#main #search-board {
+    text-align: left;
+    height:400px;
+    overflow-y:auto;
+    padding-left:0px;
+}
+#main #search-board .target{
+    display: inline-block;
+    text-align: left;
+    background-color: #000;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    margin:5px 0px;
+    padding-right:15px;
+    color:#fff;
+    width:100%;
+}
+#main #search-board .target .loc{
+    background-color: #F76055;
+    display: inline-block;
+    height: 20px;
+    line-height:20px;
+    width:22px;
+    font-size: 11px;
+    text-align: center;
+}
+#main #search-board .target img {
+    width:30px;
+    height:30px;
+    margin:7px 5px 3px 3px
+}
+#main #search-board .target:hover{
+    text-decoration: none;
+    color:#ffff00;
+}
+.rate a{
+    display: block;
+    color:#000;
+    margin-bottom:10px;
+}
+.rate img{
+    width:25px;
+    height:25px;
+    margin-right:10px;
+}
+.rate p{
+    padding-left:38px;
+    color:#999;
+    font-size: 11px;
+    word-break: break-all;
+}
+
+.search-all hr{
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+.search-all b{
+    display: block;
+    margin-bottom:15px;
+}
+.search-all a:hover{
+    text-decoration: none;
+}
+
+.search-detail .condition {
+    margin-bottom: 10px
+}
+.search-detail .condi-del{
+    width:5%;
+    color:#999
+}
+.search-detail #sel-condition{
+    width:25%;
+}
+.search-detail .val-condition{
+    width:60%;
+    margin:0px;
+    display: none;
+}
+.search-detail .val-condition.on{
+    display: inline-block;
+}
+#show-map label{
+    color:#fff;
+    font-weight:normal;
+}
+#map{
+    height:320px;
+    margin-bottom:10px
+}
+#country[disabled] {
+    background-color: #eee;
+    color:#aaa;
+    cursor: not-allowed;
+}
+
+.disc{
+    color:#fff;
+    margin-bottom:15px;
+}
+.disc b{
+    font-size:20px;
+}

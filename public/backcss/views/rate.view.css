@@ -1,0 +1,127 @@
+.btn-rate{
+    background-color: #D9534F;
+    color:#fff;
+    float: right;
+    margin-top:-4px;
+}
+.photo img{
+    width:150px;
+    height:150px;
+}
+.target-info .name{
+    font-size:20px;
+    font-weight: bold;
+}
+.target-info th{
+    color:#999;
+    font-weight: normal;
+    padding-right:15px;
+}
+.target-info td{
+    padding: 3px 10px 3px 0px;
+}
+.target-score{
+    font-size:50px;
+    font-weight:bolder;
+}
+.featured {
+    vertical-align: bottom;
+}
+.featured a {
+    width:100%;
+}
+.featured select {
+    width:100%;
+    margin:10px 0px 10px 0px
+}
+.info #score{
+    font-size: 30px;
+    font-weight:bolder;
+    color:#1b6d85;
+}
+.info {
+    border-top: #eee solid 1px;
+    border-bottom: #eee solid 1px;
+}
+.info #year{
+    color:#999;
+    margin-left:10px;
+}
+.info #year b{
+    font-size:10px;
+    font-weight:normal;
+}
+.info #dt{
+    margin-top: -25px;
+    font-size:10px;
+}
+.info #comment{
+    margin-bottom:10px;
+    word-break:break-all;
+}
+.info #comment b{
+    color: #999;
+    margin-right:10px;
+}
+
+#list-user{
+    border: 1px solid #eee;
+    height:500px;
+    overflow: auto;
+    padding:10px;
+}
+#list-user a{
+    padding:10px;
+    cursor: pointer;
+    display: block;
+}
+#list-user a span{
+    margin-left:10px;
+    font-size:12px;
+    color:#999;
+}
+#list-user img{
+    width:30px;
+    height:30px;
+    margin-right:20px;
+}
+#list-user .rate.on{
+    background-color: #efefef;
+}
+#list-user .info{
+    display: none;
+}
+
+#list-reply div{
+
+}
+#list-reply .creator img {
+    width:18px;
+    height:18px;
+    margin-left:10px;
+    margin-right:10px;
+}
+#list-reply .creator span {
+    font-size:11px;
+    margin-left:10px;
+}
+#list-reply .comment{
+    word-break: break-all
+}
+#reply textarea, #reply #reply-submit{
+    height:50px;
+}
+#reply #reply-submit{
+    line-height:40px;
+}
+#reply .update, #reply .delete{
+    font-size: 11px;
+    margin-left:5px;
+    color:#999;
+    cursor: pointer;
+}
+#edit-target {
+    color:#000;
+    font-weight:normal;
+    font-size:13px;
+}

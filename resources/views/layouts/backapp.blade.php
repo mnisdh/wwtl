@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>WWTL</title>
+    <title>WWLT</title>
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
@@ -14,15 +14,14 @@
     <!-- Styles -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/jquery.modal.css" type="text/css" rel="stylesheet" />
-    <link href="/css/comm.css" rel="stylesheet">
-    {{--<link href="/css/commPC.css" rel="stylesheet">--}}
-    {{--<link href="/css/commMB.css" rel="stylesheet">--}}
+    <link href="/css/common.css?20160907" rel="stylesheet">
     @yield('css')
 </head>
 <body id="app-layout">
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
+
                 <!-- Collapsed Hamburger -->
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
                     <span class="sr-only">Toggle Navigation</span>
@@ -69,34 +68,16 @@
         </div>
     </nav>
 
-    <div class="jumbotron">
-        <div class="container">
-            @if(Request::is('/'))
-            <p class="tit-main">WWTL</p>
-            @endif
-            <p class="tit-sub">
-                <b>You can find anyone.</b>
-                If you search by name, nick name, birthday, city, state or country.
-                <b>You can rate anyone.</b>
-                Rate your girlfriend, boyfriend, boss, ex-wife, ex-husband, the mail man, your plumber, teachers, parents. ANYONE!</p>
-            <a class="btn btn-default btn-lg" id="btn-find">Find Someone</a> <a href="/rate/target/-1" class="btn btn-default btn-lg">Rate Someone</a>
-        </div>
-    </div>
     <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div id="main">
-                    <div class="background"></div>
-                    <div>@yield('main')</div>
-                </div>
-            </div>
+        <div id="main" class="row">
+            <div class="background"></div>
+            <div class="col-md-12">@yield('main')</div>
         </div>
         <div class="row">
-            <div class="col-sm-9 col-xs-12">
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <div>@yield('content')</div>
-            </div>
-            <div class="col-sm-3 col-xs-12">advertisement area</div>
+            <div class="col-md-8 col-md-offset-1">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                @yield('content')</div>
+            <div class="col-md-3">advertisement area</div>
         </div>
     </div>
 

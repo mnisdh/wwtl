@@ -3,16 +3,17 @@
 namespace App\Http\Controllers;
 use DB;
 use App\Http\Requests;
+use Illuminate\Support\Facades\Lang;
 
 class RateController extends Controller
 {
     public function getTarget($id){
-//        if(\Auth::guest()){
-//            return redirect('/login');
-//        }
-//        else{
-//            return view('/rate/target', ['seq' => $id]);
-//        }
+        if(\Auth::guest()){
+            return redirect('/login');
+        }
+        else{
+            return view('/rate/target', ['seq' => $id]);
+        }
         return view('/rate/target', ['seq' => $id]);
     }
     public function getRate($id){
@@ -107,44 +108,124 @@ class RateController extends Controller
         return $target->seq;
     }
 
+
+
+//    public function postSearch() {
+//        $data = DB::table('v_target');
+//        if($_POST['type'] != '')
+//        {
+//            $type = explode('|', $_POST['type']);
+//            $data = $data->where('rate_type', $type[0]);
+//            if(count($type)>0)
+//            {
+//                for($i=1; $i<count($type); $i++){
+//                    $data = $data->orWhere('rate_type', $type[$i]);
+//                }
+//            }
+//        }
+//
+//        if($_POST['query2'] != '')
+//        {
+//            $data = $data->where(function($query){
+//                return $query->Where('country', 'like', $_POST['query2']);
+//            });
+//        }
+//
+//
+//        $data = $data->where(function($query){
+//                    return $query->Where('first_name', 'like', $_POST['query1'])
+//                        ->orWhere('last_name', 'like', $_POST['query1'])
+//                        ->orWhere('nick_name', 'like', $_POST['query1'])
+//                        ->orWhere('birth', 'like', $_POST['query1']);
+//                });
+//
+//
+//
+//        if($data->count() > 0)
+//        {
+//            return $data->groupBy('seq')->get();
+//        }
+//        else{
+//            return null;
+//        }
+//    }
+
     public function postSearch() {
+        $res = $_POST['res'];
+        $country = $_POST['country'];
+
         $data = DB::table('v_target');
-        if($_POST['type'] != '')
-        {
-            $type = explode('|', $_POST['type']);
-            $data = $data->where('rate_type', $type[0]);
-            if(count($type)>0)
-            {
-                for($i=1; $i<count($type); $i++){
-                    $data = $data->orWhere('rate_type', $type[$i]);
-                }
-            }
-        }
-        
-        if($_POST['query2'] != '')
-        {
-            $data = $data->where(function($query){
-                return $query->Where('country', 'like', $_POST['query2']);
-            });
+        if($country != ''){
+            $data = $data->where('country', $country);
         }
 
-        
-        $data = $data->where(function($query){
-                    return $query->Where('first_name', 'like', $_POST['query1'])
-                        ->orWhere('last_name', 'like', $_POST['query1'])
-                        ->orWhere('nick_name', 'like', $_POST['query1'])
-                        ->orWhere('birth', 'like', $_POST['query1']);
+        switch ($_POST['typ']){
+            case 'all':
+                $data = $data->where(function($query){
+                    $val = '%'.$_POST['val'].'%';
+                    return $query->where('v_target.first_name', 'like', $val)
+                        ->orWhere('v_target.last_name', 'like', $val)
+                        ->orWhere('v_target.nick_name', 'like', $val)
+                        ->orWhere('v_target.job', 'like', $val);
                 });
-
-
-
-        if($data->count() > 0)
-        {
-            return $data->groupBy('seq')->get();
+                break;
+            case 'name':
+                $data = $data->where(function($query){
+                    $val = '%'.$_POST['val'].'%';
+                    return $query->where('v_target.first_name','like', $val)
+                        ->orWhere('v_target.last_name','like', $val)
+                        ->orWhere('v_target.nick_name','like', $val);
+                });
+                break;
+            case 'job':
+                $data = $data->where(function($query){
+                    $val = '%'.$_POST['val'].'%';
+                    return $query->where('v_target.job', 'like', $val);
+                });
+                break;
+            default:
+                $data = $data->where(function($query){
+                    return $query->where('v_target.rate_type', $_POST['typ']);
+                });
+                $data = $data->where(function($query){
+                    $val = '%'.$_POST['val'].'%';
+                    return $query->where('v_target.first_name', 'like', $val)
+                        ->orWhere('v_target.last_name', 'like', $val)
+                        ->orWhere('v_target.nick_name', 'like', $val)
+                        ->orWhere('v_target.job', 'like', $val);
+                });
+                break;
         }
-        else{
-            return null;
+
+        if($res == 'target'){
+            return $data->get();
+        } else if($res == 'reply') {
+            $reply = $data
+                    ->join('reply', 'reply.target_seq', '=', 'seq')
+                    ->join('user', 'reply.user_seq', '=', 'user.seq');
+            return $reply
+                ->select('reply.comment', 'user.nick_name as u_nick', 'user.photo as u_photo',
+                    'v_target.seq', 'v_target.nick_name as nick_name', 'v_target.photo as photo', 'v_target.name as name',
+                    'v_target.lat', 'v_target.lng', 'v_target.score')
+                ->get();
+            //return $reply->get();
+        } else {
+            $val = '%'.$_POST['val'].'%';
+            $writer = DB::table('target')
+                      ->join('user', 'target.user_seq','=','user.seq')
+                      ->where('target.first_name', 'like', $val)
+                          ->orWhere('target.last_name', 'like', $val)
+                          ->orWhere('target.nick_name', 'like', $val)
+                          ->orWhere('target.job', 'like', $val);
+            return $writer
+                ->select('user.nick_name as u_nick', 'user.photo as u_photo',
+                    'target.seq', 'target.nick_name as nick_name', 'target.photo as photo',
+                    'target.lat', 'target.lng')
+                ->get();
         }
+
+
+
     }
 
     public function postSearchall(){

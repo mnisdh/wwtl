@@ -6,3 +6,6 @@
     margin: 10px 0px 5px 0px;
 }
 .btn-primary {width:100%;}
+.list-group-item{ border: none;}
+input[type=text]{ border-radius: 0px; }
+select {margin-right:10px; height: 32px;}

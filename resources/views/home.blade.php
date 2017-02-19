@@ -1,72 +1,83 @@
 @extends('layouts.app')
 @section('css')
-    <link href="/css/views/home.css?20130919" rel="stylesheet">
+    <link href="/css/views/home.css" rel="stylesheet">
 @endsection
 @section('main')
-    <div class="row">
-        <div class="col-md-7" id="target-board">
-            <div class="row" id="show-map">
-                <div class="col-xs-9">
-                    <div id="map"></div>
-                    <label class="checkbox-inline"><input id="chk-country" type="checkbox" />Search only in</label>
-                    <select id="country" disabled>
-                        @foreach($country as $data)
-                            <option value="{{$data->country_code}}">{{$data->country_name}}</option>
+    <div id="map"></div>
+@endsection
+@section('content')
+    <div class="row"  id="search">
+        <div class="col-sm-12">
+            <div class="input-group">
+                <div class="input-group-btn">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span id="sel-search-typ" data-val="all">All</span> <span class="caret"></span></button>
+                    <ul id="search-typ" class="dropdown-menu">
+                        <li data-val="all"><a>All</a></li>
+                        <li data-val="name"><a>Name</a></li>
+                        <li data-val="job"><a>Job</a></li>
+                        <li role="separator" class="divider"></li>
+                        @foreach($ratetype as $data )
+                            <li data-val="{{$data->rate_type}}"><a>{{$data->name}}</a></li>
                         @endforeach
-                    </select>
+                    </ul>
                 </div>
-                <div class="col-xs-3" id="search-board"></div>
+                <input type="text" id="target" class="form-control" placeholder="Search for...">
+
+                <div class="input-group-btn">
+                    <a class="btn btn-default" id="btn-search"><i class="glyphicon glyphicon-search"></i></a>
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-globe"></i><span id="sel-country" data-val=""></span></button>
+                    <ul class="dropdown-menu" id="country">
+                        <li data-val=""><a>Worldwide</a></li>
+                        @foreach($country as $data)
+                            <li data-val="{{$data->country_code}}"><a>{{$data->country_name}}</a></li>
+                        @endforeach
+                    </ul>
+                </div>
             </div>
         </div>
-        <script type="text/template" id="tmpl-search">
-        <% _.each(data, function(v, i){%>
-                <a class="target" href="/rate/view/<%- v.seq %>">
-                    <span class="loc"><%- i+1 %></span>
-                    <img class="img-rounded" src="<%- v.photo %>" />
-                    <span><%- v.nick_name %></span>
-                </a>
-        <%})%>
-        </script>
-        <div class="col-md-5 search">
-            <div class="row">
-                <div class="col-xs-12 disc">
-                    <b>You can find anyone.</b> If you search by name, nick name, birthday, city, state or country.
-                </div>
-                <div class="col-xs-12 disc">
-                    <b>You can rate anyone.</b> Rate your girlfriend, boyfriend, boss, ex-wife, ex-husband, the mail man, your plumber, teachers, parents.  ANYONE!
-                </div>
-                <div class="col-xs-12 txt">
-                    <i class="glyphicon glyphicon-user"></i>
-                    <input type="text" id="target" placeholder="name, nick name or year of birth">
-                </div>
-                <div class="col-xs-12 txt">
-                    <i class="glyphicon glyphicon glyphicon-map-marker"></i>
-                    <input type="text" id="locale" placeholder="city or state" />
-                    <input type="hidden" id="locale_cd" value="" />
-                </div>
-                <div class="col-xs-12">
-                    <a id="search" class="btn btn-success btn-lg"><i class="glyphicon glyphicon-search"></i> Find Person</a>
-                    <a id="rate" href="/rate/target/-1" class="btn btn-danger btn-lg"><i class="glyphicon glyphicon-thumbs-up"></i> Rate Someone</a>
-                </div>
-                <div class="col-xs-12 featured">
-                    <select class="no-radius">
-                        <option>Looking for someone in particular?</option>
-                        @foreach($ratetype as $data )
-                            <option value="{{$data->rate_type}}">{{$data->name}}</option>
-                        @endforeach
-                    </select>
-                    <div class="cont row-fluid" id="list-featured"></div>
-                    <script id="tmpl-featured-btn" type="text/template">
-                        <a class="type" data-cd="<%- item_cd %>">
-                            <%- item_nm %> <i class="glyphicon glyphicon-remove-sign"></i>
-                        </a>
-                    </script>
-                </div>
+        <div class="col-sm-4">
+            <div class="res-type">
+                <a class="on" data-val="target">Person who has been rated</a>
+                <a data-val="reply">All comment about the person</a>
+                <a data-val="writer">Who first rated the person</a>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="search-result">
+                <ul id="search-board"></ul>
             </div>
         </div>
     </div>
-@endsection
-@section('content')
+    <script type="text/template" id="tmpl-search">
+        <% _.each(data, function(tg){ %>
+        <li>
+        <% var seq = 0, tot = 0; var nm = '', comment = '', writer = '';
+            _.each(tg, function(v, i){ if(seq != v.seq){
+            seq = v.seq; comment = v.comment; writer = v.u_nick %>
+            <img src="<%- v.photo %>">
+            <p class="target_nm">
+                <a class="target" href="/rate/view/<%- v.seq %>"><%- v.nick_name %></a>
+            </p>
+        <%}  tot += v.score; if(nm.indexOf(v.name) < 0){ nm += v.name + ', '; } })%>
+        <p class="featured">
+            <% nm = nm.substr(0, nm.length -2); if(nm != null && nm != '' && nm != 'null'){
+            if(res == 'target'){%>
+            <span><%- nm %></span>
+            <%}else if(res=='reply'){%>
+            <b><%- comment %> </b> <span> by <%- writer %></span>
+            <%}else {%>
+            <span> by <%- writer %></span>
+            <%}}else{%>
+            <span>No person rated. </span><a class="btn btn-rate btn-sm" href="/rate/rate/<%- tg[0].seq %>"><i class="glyphicon glyphicon-thumbs-up"></i> Rate</a>
+            <%}%>
+        </p>
+        <% if(nm != null && nm != '' && nm != 'null'){ %>
+        <p class="score"><%- res != 'writer' ? (tot / tg.length).toFixed(2) : '' %></p>
+        <%}%>
+        <div class="clear"></div>
+        </li>
+        <%})%>
+    </script>
     @if(!Auth::guest())
         <div class="row" style="margin-top:20px">
             <div class="col-md-4">
@@ -249,7 +260,7 @@
     @endif
 @endsection
 @section('scripts')
-    <script src="/scripts/views/home.js?20160919"></script>
+    <script src="/scripts/views/home.js?"></script>
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5cttHt1JC55QdJH7Ki41zIOXIF0I5lR8&signed_in=true&libraries=places&callback=initMap">
     </script>

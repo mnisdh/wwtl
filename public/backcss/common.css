@@ -1,0 +1,73 @@
+body {
+    font-family: 'Lato';
+    /*background: url('/img/back.jpg');*/
+}
+
+.navbar-default{
+    background-color: #000;
+    border-bottom: 1px solid #000;
+}
+.navbar-default .navbar-brand{
+    font-weight: bolder;
+    color:#337AB7
+}
+.navbar-default .navbar-nav>li>a{
+    color:#fff;
+}
+.navbar-default .navbar-nav>li>a:hover{
+    color:#FFFF00;
+}
+.panel{
+    border-radius:0px;
+    box-shadow: 2px 2px 1px #000;
+}
+.panel-default>.panel-heading{
+    background-color: #000;
+    color:#fff;
+}
+.panel-default>.panel-heading select {
+    color: #000;
+}
+.panel-default>.panel-heading, .panel-default{
+    border: 1px solid #000;
+}
+select {
+    line-height:30px;
+    height:30px;
+    background: #ffffff;
+    border: 1px solid #CCCCCC;
+    margin: 0 5px;
+}
+
+.no-radius{
+    -webkit-border-radius:0px;
+    -moz-border-radius:0px;
+    border-radius:0px;
+}
+
+#user-photo{
+    display: none;
+}
+@media (min-width: 768px){
+    .navbar-nav>li>a {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .navbar-default .navbar-nav>li>a{
+        line-height:40px;
+    }
+    #user-photo {
+        width:40px;
+        height: 40px;
+        margin-right:10px;
+        display: inline-block;
+    }
+}
+
+.clear{
+    display: block;
+    clear: both;
+}
+.provision{
+    cursor: pointer;
+}

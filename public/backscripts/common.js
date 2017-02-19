@@ -25,14 +25,6 @@ $('.provision').on('click', function () {
     })
 })
 
-$('#btn-find').on('click', function(){
-    console.log(location)
-    if(location.pathname == '/'){
-        $(window).scrollTop(600)
-    }else{
-        location.href = '/?find';
-    }
-})
 
 function Datebox(date) {
     var date;
