@@ -28,7 +28,7 @@ class UserController extends Controller
         return view('/auth/mypage');
     }
 
-    public function contact(){
+    public function getContact(){
         return view('/contact');
     }
 }
