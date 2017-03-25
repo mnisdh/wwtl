@@ -8,7 +8,7 @@
 
 <div>
     Welcome to WWTL.<br />
-    For Login, <a href="http://ec2-54-172-88-184.compute-1.amazonaws.com/authLoginProcess/{!! $id !!}">Click here!!</a>
+    For Login, <a href="http://whatweretheylike.com/authLoginProcess/{!! $id !!}">Click here!!</a>
 </div>
 
 </body>
